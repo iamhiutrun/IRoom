@@ -3,28 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_btn_logout.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_button.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_edit_verifycode_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_edittext.xml" value="0.21979166666666666" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_home_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_back_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_camera_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_favorite_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_notifications_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_orders_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_profile_24.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/activity_authen.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/activity_login.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_blank.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login2.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_profile.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_register.xml" value="0.2296195652173913" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_signup.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_text_field.xml" value="0.2296195652173913" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/menu/menu.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_search.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_home.xml" value="0.297008547008547" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login.xml" value="0.297008547008547" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_apartment_small.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_circle_city.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_city_chip.xml" value="0.4466666666666667" />
       </map>
     </option>
   </component>
