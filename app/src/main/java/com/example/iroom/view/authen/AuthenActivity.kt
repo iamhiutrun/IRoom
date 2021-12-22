@@ -12,7 +12,7 @@ class AuthenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authen)
 
-        replaceFragment(LoginFragment.newInstance(), true)
+        replaceFragment(ProfileFragment.newInstance(), true)
     }
 
     private fun replaceFragment(fragment: Fragment, isTransition: Boolean) {
