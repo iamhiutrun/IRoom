@@ -5,11 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <Button
         android:id="@+id/btn_city"
-        android:padding="5dp"
+        android:padding="@dimen/padding5"
         android:textAllCaps="false"
-        android:text="Hanoi"
+        android:text="@string/hanoi"
         android:layout_width="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_height="40dp"/>
+        android:layout_height="@dimen/height40"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

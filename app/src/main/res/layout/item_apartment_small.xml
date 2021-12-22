@@ -6,10 +6,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/width200"
+        android:layout_height="@dimen/height200"
         app:cardBackgroundColor="@color/teal_200"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="@dimen/radius8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -20,14 +20,14 @@
             <ImageView
                 android:id="@+id/im_apartment"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="@dimen/height100"
                 android:background="@color/black"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/btn_fav"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/height30"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,16 +44,16 @@
                 android:id="@+id/tv_figures"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/margin5"
                 android:text="3 guest - 2 bedroom - 1bath"
-                android:textSize="10sp"
+                android:textSize="@dimen/size10"
                 app:layout_constraintTop_toBottomOf="@id/tv_apartment_description" />
 
             <TextView
                 android:id="@+id/tv_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="@dimen/margin2"
                 android:text="850.000 đ"
                 android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/tv_figures" />
