@@ -180,17 +180,29 @@
                 android:textColor="@color/black" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnLogout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/custom_btn_logout" />
+            android:layout_marginTop="50dp">
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/custom_btn_logout" />
+
+            <ProgressBar
+                android:id="@+id/pgbLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/orange_dark"
+                android:visibility="invisible" />
+        </RelativeLayout>
 
     </LinearLayout>
 </layout>

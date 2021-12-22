@@ -13,6 +13,20 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProfileBinding.bind(view)
+
+        setInfo()
+
+        binding.btnLogout.setOnClickListener {
+            logout()
+        }
+    }
+
+    private fun setInfo() {
+        TODO("Not yet implemented")
+    }
+
+    private fun logout() {
+        TODO("Not yet implemented")
     }
 
     /*override fun onCreate(savedInstanceState: Bundle?) {

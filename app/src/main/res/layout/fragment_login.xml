@@ -101,27 +101,52 @@
             android:padding="10dp"
             android:layout_marginTop="10dp" />
 
-        <Button
-            android:id="@+id/btnLogin"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="40dp">
 
-        <Button
-            android:id="@+id/btnSignup"
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <ProgressBar
+                android:id="@+id/pgbLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/orange_dark"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:textColor="@color/white"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp" >
+
+            <Button
+                android:id="@+id/btnSignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button" />
+
+            <ProgressBar
+                android:id="@+id/pgbSignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/orange_dark"
+                android:visibility="invisible" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/txtForgotPassword"
