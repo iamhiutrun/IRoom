@@ -20,12 +20,12 @@
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Save"
-            android:layout_marginTop="20dp"
+            android:text="@string/save"
+            android:layout_marginTop="@dimen/margin20"
             android:textAlignment="textEnd"
-            android:layout_marginHorizontal="25dp"
+            android:layout_marginHorizontal="@dimen/margin25"
             android:textColor="@color/green_dark"
-            android:textSize="17sp"
+            android:textSize="@dimen/size17"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,24 +35,24 @@
             android:id="@+id/relativeLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin20"
             android:gravity="center_horizontal"
             app:layout_constraintEnd_toEndOf="@+id/btn_save"
             app:layout_constraintStart_toStartOf="@+id/btn_save"
             app:layout_constraintTop_toBottomOf="@id/btn_save">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/img_profile"
+                android:layout_width="@dimen/width160"
+                android:layout_height="@dimen/height160"
                 android:src="@drawable/ic_profile_24" />
 
             <ImageView
                 android:id="@+id/btn_camera"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignEnd="@id/imgProfile"
-                android:layout_alignBottom="@id/imgProfile"
+                android:layout_width="@dimen/width40"
+                android:layout_height="@dimen/height40"
+                android:layout_alignEnd="@id/img_profile"
+                android:layout_alignBottom="@id/img_profile"
                 android:src="@drawable/ic_camera_24" />
         </RelativeLayout>
 
@@ -62,8 +62,8 @@
             android:layout_height="wrap_content"
             android:text="Nguyễn Huy Hoàn"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
-            android:textSize="25sp"
+            android:layout_marginTop="@dimen/margin10"
+            android:textSize="@dimen/size25"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
             app:layout_constraintStart_toStartOf="@+id/relativeLayout"
@@ -74,7 +74,7 @@
             layout="@layout/custom_info_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin20"
             app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
             app:layout_constraintStart_toStartOf="@+id/relativeLayout"
             app:layout_constraintTop_toBottomOf="@+id/tv_full_name" />
@@ -84,7 +84,7 @@
             layout="@layout/custom_info_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin10"
             app:layout_constraintEnd_toEndOf="@+id/layout_email"
             app:layout_constraintStart_toStartOf="@+id/layout_email"
             app:layout_constraintTop_toBottomOf="@+id/layout_email" />
@@ -93,7 +93,7 @@
             android:id="@+id/layout_date_of_birth"
             layout="@layout/custom_info_profile"
             android:layout_width="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin10"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/layout_phone_number"
             app:layout_constraintStart_toStartOf="@+id/layout_phone_number"
@@ -104,7 +104,7 @@
             layout="@layout/custom_info_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin10"
             app:layout_constraintEnd_toEndOf="@+id/layout_date_of_birth"
             app:layout_constraintStart_toStartOf="@+id/layout_date_of_birth"
             app:layout_constraintTop_toBottomOf="@+id/layout_date_of_birth" />
@@ -114,7 +114,7 @@
             layout="@layout/custom_info_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin10"
             app:layout_constraintEnd_toEndOf="@+id/layout_address"
             app:layout_constraintStart_toStartOf="@+id/layout_address"
             app:layout_constraintTop_toBottomOf="@+id/layout_address" />
@@ -123,9 +123,9 @@
             android:id="@+id/btn_logout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textAllCaps="false"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="@dimen/margin10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/layout_gender"
             app:layout_constraintStart_toStartOf="@+id/layout_gender" />
