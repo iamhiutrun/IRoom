@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="@dimen/width50"
+            android:layout_height="@dimen/height50"
+            android:layout_marginStart="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin20"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin20"
+            android:text="@string/iroom"
+            android:textColor="@color/black"
+            android:textSize="@dimen/margin25"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+            app:layout_constraintStart_toEndOf="@+id/circleImageView"
+            app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+        <TextView
+            android:id="@+id/tv_where"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin30"
+            android:layout_marginEnd="@dimen/margin25"
+            android:text="@string/where_do_you_want_to_go"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size25"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/circleImageView"
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin30"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="@dimen/padding10"
+            android:hint="search"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/padding7"
+            android:textSize="@dimen/size20"
+            app:layout_constraintEnd_toEndOf="@+id/tv_where"
+            app:layout_constraintStart_toStartOf="@+id/tv_where"
+            app:layout_constraintTop_toBottomOf="@+id/tv_where" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_circle_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20"
+            app:layout_constraintEnd_toEndOf="@+id/search_view"
+            app:layout_constraintStart_toStartOf="@+id/search_view"
+            app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+        <TextView
+            android:id="@+id/tv_recommend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin25"
+            android:text="Recommend"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size25"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/circleImageView"
+            app:layout_constraintTop_toBottomOf="@+id/rv_circle_city" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_city_chip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            app:layout_constraintEnd_toEndOf="@+id/search_view"
+            app:layout_constraintStart_toStartOf="@+id/search_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recommend" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_apartment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            app:layout_constraintEnd_toEndOf="@+id/search_view"
+            app:layout_constraintStart_toStartOf="@+id/search_view"
+            app:layout_constraintTop_toBottomOf="@+id/rv_city_chip" />
+
+        <Button
+            android:id="@+id/btn_see_more"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height40"
+            android:text="See more"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/margin30"
+            android:layout_marginBottom="@dimen/margin50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rv_apartment"
+            app:layout_constraintStart_toStartOf="@+id/rv_apartment"
+            app:layout_constraintTop_toBottomOf="@id/rv_apartment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

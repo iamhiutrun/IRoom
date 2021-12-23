@@ -19,4 +19,6 @@
     <string name="logout">Logout</string>
     <string name="save">Save</string>
     <string name="register">Register</string>
+    <string name="where_do_you_want_to_go">Where do you want to go ?</string>
+    <string name="hanoi">Hanoi</string>
 </resources>
