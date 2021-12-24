@@ -32,4 +32,7 @@
     <string name="fill_order_id_in_bank_transfer_message">Fill order id in bank transfer message</string>
     <string name="remain_time">Remain Time:</string>
     <string name="transaction_id">Transaction ID</string>
+    <string name="booking">Booking</string>
+    <string name="check_in">Check in</string>
+    <string name="check_out">Check out</string>
 </resources>
