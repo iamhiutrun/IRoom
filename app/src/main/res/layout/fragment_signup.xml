@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -88,30 +90,6 @@
             app:layout_constraintStart_toStartOf="@+id/tv_email"
             app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
-        <TextView
-            android:id="@+id/tv_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:textColor="@color/black"
-            android:layout_marginTop="@dimen/margin15"
-            android:textSize="@dimen/size15"
-            app:layout_constraintStart_toStartOf="@+id/welcome"
-            app:layout_constraintTop_toBottomOf="@id/edtEmail" />
-
-        <EditText
-            android:id="@+id/edt_password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext"
-            android:hint="@string/password"
-            android:padding="@dimen/padding5"
-            android:layout_marginTop="@dimen/margin10"
-            android:textSize="@dimen/size20"
-            app:layout_constraintEnd_toEndOf="@+id/welcome"
-            app:layout_constraintStart_toStartOf="@+id/tv_password"
-            app:layout_constraintTop_toBottomOf="@id/tv_password" />
-
         <Button
             android:id="@+id/btn_login"
             android:layout_width="0dp"
@@ -120,11 +98,11 @@
             android:text="@string/verify_email"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:layout_marginTop="@dimen/margin50"
             android:textSize="@dimen/size17"
+            android:layout_marginTop="@dimen/margin30"
             app:layout_constraintEnd_toEndOf="@+id/welcome"
             app:layout_constraintStart_toStartOf="@+id/welcome"
-            app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
         <TextView
             android:id="@+id/textView"
