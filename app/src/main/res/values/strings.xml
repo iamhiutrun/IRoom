@@ -24,4 +24,5 @@
     <string name="service_apartment">Service apartment</string>
     <string name="cancel">Cancel</string>
     <string name="pay">Pay</string>
+    <string name="my_collections">My Collections</string>
 </resources>
