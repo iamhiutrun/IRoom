@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_btn_logout.xml" value="0.18034188034188034" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/custom_button.xml" value="0.18034188034188034" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/ic_search.xml" value="0.20185185185185187" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_home.xml" value="0.297008547008547" />
-        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login.xml" value="0.297008547008547" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/drawable/round_search.xml" value="0.18034188034188034" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/custom_info_profile.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login.xml" value="0.5" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_apartment_small.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_circle_city.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_city_chip.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/menu/navigation.xml" value="0.16709401709401708" />
       </map>
     </option>
   </component>

@@ -23,7 +23,6 @@
     <dimen name="padding10">10dp</dimen>
     <dimen name="padding7">7dp</dimen>
     <dimen name="margin5">5dp</dimen>
-    <dimen name="width200">200dp</dimen>
     <dimen name="height200">200dp</dimen>
     <dimen name="radius8">8dp</dimen>
     <dimen name="height100">100dp</dimen>
@@ -31,4 +30,5 @@
     <dimen name="height30">30dp</dimen>
     <dimen name="size10">10sp</dimen>
     <dimen name="margin2">2dp</dimen>
+    <dimen name="radius_10">10dp</dimen>
 </resources>
