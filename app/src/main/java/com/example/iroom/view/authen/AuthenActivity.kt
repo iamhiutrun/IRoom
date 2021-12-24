@@ -12,12 +12,11 @@ class AuthenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authen)
 
-        replaceFragment(ProfileFragment.newInstance(), true)
+        replaceFragment(LoginFragment.newInstance(), true)
     }
 
-    private fun replaceFragment(fragment: Fragment, isTransition: Boolean) {
+    fun replaceFragment(fragment: Fragment, isTransition: Boolean) {
         val fragmentTransition = supportFragmentManager.beginTransaction()
-
         if (isTransition) {
             fragmentTransition.setCustomAnimations(
                 android.R.anim.slide_out_right,
@@ -29,5 +28,18 @@ class AuthenActivity : AppCompatActivity() {
         fragmentTransition.commit()
     }
 
+
+    fun addFragment(fragment: Fragment,isTransition: Boolean){
+        val fragmentTransition = supportFragmentManager.beginTransaction()
+        if (isTransition) {
+            fragmentTransition.setCustomAnimations(
+                android.R.anim.slide_out_right,
+                android.R.anim.slide_in_left
+            )
+        }
+        fragmentTransition.add(R.id.frame_layout, fragment,null)
+            .addToBackStack(fragment.javaClass.simpleName)
+        fragmentTransition.commit()
+    }
 
 }

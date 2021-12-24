@@ -30,6 +30,5 @@
     <dimen name="height30">30dp</dimen>
     <dimen name="size10">10sp</dimen>
     <dimen name="margin2">2dp</dimen>
-    <dimen name="width10">10dp</dimen>
-    <dimen name="height10">10dp</dimen>
+    <dimen name="radius_10">10dp</dimen>
 </resources>
