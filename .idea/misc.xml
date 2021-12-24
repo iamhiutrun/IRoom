@@ -11,6 +11,7 @@
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_collection.xml" value="0.1606837606837607" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_favourite.xml" value="0.1606837606837607" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_host_profile.xml" value="0.1606837606837607" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login.xml" value="0.5" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_notification.xml" value="0.1606837606837607" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_order.xml" value="0.1606837606837607" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_city_chip.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_collection.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_notification_type_a.xml" value="0.5" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_notification_type_b.xml" value="0.29786324786324786" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_order_card.xml" value="0.16709401709401708" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/menu/navigation.xml" value="0.16709401709401708" />
       </map>

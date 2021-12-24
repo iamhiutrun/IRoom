@@ -1,4 +1,4 @@
-package com.example.iroom.view.authen
+package com.example.iroom.view.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.iroom.MainActivity
-import com.example.iroom.R
 import com.example.iroom.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {

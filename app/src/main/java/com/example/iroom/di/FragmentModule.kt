@@ -1,6 +1,6 @@
 package com.example.iroom.di
 import com.example.iroom.view.authen.LoginFragment
-import com.example.iroom.view.authen.ProfileFragment
+import com.example.iroom.view.profile.ProfileFragment
 import com.example.iroom.view.authen.RegisterFragment
 import com.example.iroom.view.authen.SignupFragment
 import dagger.Module
