@@ -26,4 +26,10 @@
     <string name="pay">Pay</string>
     <string name="my_collections">My Collections</string>
     <string name="notifications">Notifications</string>
+    <string name="payment">Payment</string>
+    <string name="paid">Paid</string>
+    <string name="bank_transfer_only_supported">Bank transfer (only supported)</string>
+    <string name="fill_order_id_in_bank_transfer_message">Fill order id in bank transfer message</string>
+    <string name="remain_time">Remain Time:</string>
+    <string name="transaction_id">Transaction ID</string>
 </resources>

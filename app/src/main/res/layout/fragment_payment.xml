@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.order.PaymentFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/padding_20"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_payment" />
+    <TextView
+        android:id="@+id/tv_payment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/payment"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size25"
+        android:layout_marginHorizontal="@dimen/margin25"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_bank_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/bank_transfer_only_supported"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment" />
+
+    <TextView
+        android:id="@+id/tv_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Order ID: 123456789"
+        app:layout_constraintStart_toStartOf="@+id/tv_bank_transfer"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank_transfer" />
+
+    <TextView
+        android:id="@+id/tv_fill_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:textColor="@color/orange_1"
+        android:textStyle="bold"
+        android:text="@string/fill_order_id_in_bank_transfer_message"
+        app:layout_constraintStart_toStartOf="@+id/tv_order_id"
+        app:layout_constraintTop_toBottomOf="@id/tv_order_id" />
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin20"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@id/tv_fill_order" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/im_host"
+        android:layout_width="@dimen/width50"
+        android:layout_height="@dimen/height50"
+        android:src="@drawable/ic_profile_24"
+        android:layout_marginTop="@dimen/margin20"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <TextView
+        android:id="@+id/tv_host_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NGO MAI PHUONG"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/margin10"
+        app:layout_constraintStart_toEndOf="@+id/im_host"
+        app:layout_constraintTop_toTopOf="@+id/im_host" />
+
+    <TextView
+        android:id="@+id/tv_bank_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin10"
+        android:text="Bank Account: 1002136153"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/im_host"
+        app:layout_constraintTop_toBottomOf="@+id/tv_host_name" />
+
+    <TextView
+        android:id="@+id/tv_bank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin10"
+        android:text="Bank: ViettinBank"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/im_host"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bank_account" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1.850.000 đ"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/size20"
+        android:layout_marginTop="@dimen/margin20"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bank" />
+
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin20"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+    <TextView
+        android:id="@+id/tv_remain_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remain_time"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+    <TextView
+        android:id="@+id/tv_count_down_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="14 : 59"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+    <TextView
+        android:id="@+id/tv_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transaction_id"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin10"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/tv_remain_time" />
+
+    <TextView
+        android:id="@+id/tv_transaction_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="32as54df54df54wa15wf84"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="@drawable/round_text_view"
+        android:layout_marginTop="@dimen/margin10"
+        app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transaction" />
+
+    <Button
+        android:id="@+id/btn_paid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/paid"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/margin50"
+        app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+        app:layout_constraintStart_toStartOf="@+id/tv_payment"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transaction_id" />
+</androidx.constraintlayout.widget.ConstraintLayout>
