@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.order.BookingFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/padding_20"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_booking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_booking" />
+    <TextView
+        android:id="@+id/tv_booking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/booking"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size25"
+        android:layout_marginHorizontal="@dimen/margin25"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_check_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        android:text="@string/check_in"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent "
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <TextView
+        android:id="@+id/tv__time_check_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        android:layout_marginTop="@dimen/margin10"
+        android:textSize="@dimen/size10"
+        android:text="12/10/2021"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent "
+        app:layout_constraintTop_toBottomOf="@+id/tv_check_in" />
+
+    <TextView
+        android:id="@+id/tv_check_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_out"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_booking"
+        app:layout_constraintTop_toTopOf="@+id/tv_check_in" />
+
+    <TextView
+        android:id="@+id/tv_time_check_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        android:text="14/10/2021"
+        android:textSize="@dimen/size10"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin10"
+        app:layout_constraintEnd_toEndOf="@+id/tv_booking"
+        app:layout_constraintTop_toBottomOf="@+id/tv_check_out" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/calendar"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/margin20"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv__time_check_in"
+        app:layout_constraintStart_toStartOf="@id/tv_check_in"
+        app:layout_constraintEnd_toEndOf="@id/tv_check_out"/>
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin30"
+        android:text="Total"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_check_in"
+        app:layout_constraintTop_toBottomOf="@id/calendar" />
+
+    <TextView
+        android:id="@+id/tv_total_figures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin30"
+        android:text="1.850.000 đ"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/calendar"
+        app:layout_constraintTop_toBottomOf="@id/calendar" />
+
+    <TextView
+        android:id="@+id/tv_room_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        android:text="Room price"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_check_in"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total" />
+
+    <TextView
+        android:id="@+id/tv_room_price_figures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.700.000 đ"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_figures"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_figures" />
+
+    <TextView
+        android:id="@+id/tv_other_fee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        android:text="Other fee"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_check_in"
+        app:layout_constraintTop_toBottomOf="@+id/tv_room_price" />
+
+    <TextView
+        android:id="@+id/tv_other_fee_figures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150.000 đ"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_room_price_figures"
+        app:layout_constraintTop_toBottomOf="@+id/tv_room_price_figures" />
+
+    <TextView
+        android:id="@+id/tv_tax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        android:text="(tax/service fee)"
+        android:textStyle="bold"
+        android:textSize="@dimen/size10"
+        app:layout_constraintStart_toStartOf="@+id/tv_check_in"
+        app:layout_constraintTop_toBottomOf="@+id/tv_other_fee" />
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin20"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/calendar"
+        app:layout_constraintStart_toStartOf="@+id/tv_total"
+        app:layout_constraintTop_toBottomOf="@id/tv_tax" />
+
+    <TextView
+        android:id="@+id/tv_booing_person_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="Booking person info"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_check_in"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <TextView
+        android:id="@+id/tv_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/size10"
+        app:layout_constraintStart_toStartOf="@+id/tv_booing_person_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_booing_person_info" />
+
+    <TextView
+        android:id="@+id/tv_customer_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nguyễn Huy Hoàn"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_customer"
+        app:layout_constraintEnd_toEndOf="@+id/divider_1"
+        app:layout_constraintTop_toTopOf="@+id/tv_customer" />
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size10"
+        android:text="PhoneNumber"
+        android:layout_marginTop="@dimen/margin10"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_booing_person_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_customer" />
+
+    <TextView
+        android:id="@+id/tv_phone_number_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0392542229"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_phone_number"
+        app:layout_constraintEnd_toEndOf="@+id/divider_1"
+        app:layout_constraintTop_toTopOf="@+id/tv_phone_number" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size10"
+        android:text="Email"
+        android:layout_marginTop="@dimen/margin10"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_booing_person_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phone_number" />
+
+    <TextView
+        android:id="@+id/tv_email_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="abc@gmail.com"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_email"
+        app:layout_constraintEnd_toEndOf="@+id/divider_1"
+        app:layout_constraintTop_toTopOf="@+id/tv_email" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:layout_marginHorizontal="@dimen/margin30"
+        android:layout_marginTop="@dimen/margin100"
+        app:layout_constraintEnd_toEndOf="@+id/divider_1"
+        app:layout_constraintStart_toStartOf="@+id/divider_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,4 +30,6 @@
     <color name="pink_white_500">#FF6263</color>
     <color name="blue_splash">#2676CD</color>
     <color name="green_dark">#4CAF50</color>
+    <color name="orange_1">#FF8000</color>
+    <color name="red">#FF0000</color>
 </resources>
