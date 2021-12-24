@@ -24,4 +24,9 @@
         android:id="@+id/profileFragment"
         android:name="com.example.iroom.view.authen.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.iroom.view.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

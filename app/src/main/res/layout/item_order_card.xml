@@ -35,7 +35,7 @@
             app:layout_constraintTop_toTopOf="@+id/tv_order_id" />
 
         <ImageView
-            android:id="@+id/im_room"
+            android:id="@+id/im_apartment"
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginTop="@dimen/margin10"
@@ -51,7 +51,7 @@
             android:textStyle="bold"
             android:layout_marginStart="@dimen/margin10"
             android:layout_marginTop="@dimen/margin20"
-            app:layout_constraintStart_toEndOf="@+id/im_room"
+            app:layout_constraintStart_toEndOf="@+id/im_apartment"
             app:layout_constraintTop_toBottomOf="@+id/tv_price" />
 
         <TextView
@@ -92,8 +92,8 @@
             android:text="Checkin: 28/10/2021"
             android:layout_marginTop="@dimen/margin10"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/im_room"
-            app:layout_constraintTop_toBottomOf="@+id/im_room" />
+            app:layout_constraintStart_toStartOf="@+id/im_apartment"
+            app:layout_constraintTop_toBottomOf="@+id/im_apartment" />
 
         <TextView
             android:id="@+id/tv_check_out"
@@ -102,7 +102,7 @@
             android:text="Checkout: 28/10/2021"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/margin10"
-            app:layout_constraintStart_toStartOf="@+id/im_room"
+            app:layout_constraintStart_toStartOf="@+id/im_apartment"
             app:layout_constraintTop_toBottomOf="@+id/tv_check_in" />
 
         <TextView
