@@ -10,38 +10,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_order_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin5"
-            android:layout_marginTop="@dimen/margin5"
-            android:text="OrderID:#3555555"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin5"
-            android:text="850.000 đ"
-            android:textColor="@color/black"
-            android:textSize="@dimen/size20"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_order_id"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_order_id" />
-
         <ImageView
             android:id="@+id/im_room"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="@dimen/margin10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_150"
             android:background="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/tv_order_id"
-            app:layout_constraintTop_toBottomOf="@id/tv_order_id" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="@dimen/margin5" />
+
+        <ImageButton
+            android:id="@+id/btn_fav"
+            android:layout_width="@dimen/width30"
+            android:layout_height="@dimen/height30"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/im_room"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_service"
@@ -49,10 +32,8 @@
             android:layout_height="wrap_content"
             android:text="@string/service_apartment"
             android:textStyle="bold"
-            android:layout_marginStart="@dimen/margin10"
-            android:layout_marginTop="@dimen/margin20"
-            app:layout_constraintStart_toEndOf="@+id/im_room"
-            app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+            app:layout_constraintStart_toStartOf="@+id/im_room"
+            app:layout_constraintTop_toBottomOf="@+id/im_room" />
 
         <TextView
             android:id="@+id/tv_apartment_description"
@@ -70,6 +51,8 @@
             android:id="@+id/layout_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:layout_marginStart="@dimen/margin20"
             app:layout_constraintStart_toStartOf="@+id/tv_apartment_description"
             app:layout_constraintTop_toBottomOf="@id/tv_apartment_description">
 
@@ -85,59 +68,35 @@
                 android:text="248 Nguyễn Trãi, Hà Đông"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_check_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Checkin: 28/10/2021"
-            android:layout_marginTop="@dimen/margin10"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/im_room"
-            app:layout_constraintTop_toBottomOf="@+id/im_room" />
-
-        <TextView
-            android:id="@+id/tv_check_out"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Checkout: 28/10/2021"
-            android:textStyle="bold"
-            android:layout_marginTop="@dimen/margin10"
-            app:layout_constraintStart_toStartOf="@+id/im_room"
-            app:layout_constraintTop_toBottomOf="@+id/tv_check_in" />
-
-        <TextView
-            android:id="@+id/tv_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wait for Check-in"
-            android:textStyle="bold"
-            android:textColor="@color/green_dark"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_check_out"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_check_out" />
-
         <LinearLayout
-            android:id="@+id/layout_button"
+            android:id="@+id/layout_figures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_check_out"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="gone"
-            app:layout_constraintTop_toTopOf="@+id/tv_check_out">
-            <Button
-                android:id="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="@+id/layout_address"
+            app:layout_constraintTop_toBottomOf="@id/layout_address">
+
+            <ImageView
+                android:layout_width="@dimen/width10"
+                android:layout_height="@dimen/height10"
+                android:background="@color/black"/>
+            <TextView
+                android:id="@+id/tv_figures"
+                android:layout_marginStart="@dimen/margin20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="@string/cancel"/>
-            <Button
-                android:id="@+id/btn_pay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin10"
-                android:textAllCaps="false"
-                android:text="@string/pay"/>
+                android:text="3 guest - 2 bedroom - 1bath"/>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="850.000 đ"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_apartment_description"
+            app:layout_constraintTop_toBottomOf="@+id/layout_figures" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
