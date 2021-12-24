@@ -20,4 +20,8 @@
         android:name="com.example.iroom.view.collection.CollectionFragment"
         android:label="fragment_collection"
         tools:layout="@layout/fragment_collection" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.iroom.view.authen.ProfileFragment"
+        android:label="ProfileFragment" />
 </navigation>
