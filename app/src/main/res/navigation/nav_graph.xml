@@ -10,4 +10,9 @@
         android:name="com.example.iroom.view.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.iroom.view.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
 </navigation>

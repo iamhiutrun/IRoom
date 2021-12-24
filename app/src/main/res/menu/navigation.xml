@@ -9,7 +9,7 @@
         android:icon="@drawable/custom_home_24"
         android:title="Collections" />
 
-    <item android:id="@+id/ordersFragment"
+    <item android:id="@+id/orderFragment"
         android:icon="@drawable/ic_profile_24"
         android:title="Order" />
 
