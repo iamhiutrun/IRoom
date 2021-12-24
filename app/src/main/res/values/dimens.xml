@@ -33,5 +33,6 @@
     <dimen name="radius_10">10dp</dimen>
     <dimen name="height10">10dp</dimen>
     <dimen name="width10">10dp</dimen>
+    <dimen name="margin100">100dp</dimen>
     <dimen name="height_150">150dp</dimen>
 </resources>

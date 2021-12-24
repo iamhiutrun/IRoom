@@ -5,13 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.iroom.R
 import com.example.iroom.databinding.FragmentRegisterBinding
-class RegisterFragment : Fragment(R.layout.fragment_register) {
+
+class RegisterFragment : Fragment() {
 
     private lateinit var _binding: FragmentRegisterBinding
     private val binding get() = _binding
-
+    lateinit var authenActivity: AuthenActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,6 +19,14 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     ): View? {
         _binding = FragmentRegisterBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        authenActivity = (activity as AuthenActivity)
+        binding.btnRegister.setOnClickListener {
+            authenActivity.replaceFragment(LoginFragment.newInstance(), false)
+        }
     }
 
     companion object {

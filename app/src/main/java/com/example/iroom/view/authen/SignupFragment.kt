@@ -13,6 +13,7 @@ class SignupFragment : Fragment() {
 
     private lateinit var _binding: FragmentSignupBinding
     private val binding get() = _binding
+    lateinit var authenActivity: AuthenActivity
 
 
     override fun onCreateView(
@@ -21,6 +22,14 @@ class SignupFragment : Fragment() {
     ): View? {
         _binding = FragmentSignupBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        authenActivity = (activity as AuthenActivity)
+        binding.btnNext.setOnClickListener {
+            authenActivity.replaceFragment(RegisterFragment.newInstance(), false)
+        }
     }
 
     companion object {
