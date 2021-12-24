@@ -15,4 +15,9 @@
         android:name="com.example.iroom.view.order.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.example.iroom.view.collection.CollectionFragment"
+        android:label="fragment_collection"
+        tools:layout="@layout/fragment_collection" />
 </navigation>
