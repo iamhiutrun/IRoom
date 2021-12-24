@@ -27,6 +27,7 @@
             android:textColor="@color/green_dark"
             android:textSize="@dimen/size17"
             android:textStyle="bold"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -125,7 +126,7 @@
             android:layout_height="wrap_content"
             android:text="@string/logout"
             android:textAllCaps="false"
-            android:layout_marginBottom="@dimen/margin10"
+            android:layout_marginBottom="@dimen/margin100"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/layout_gender"
             app:layout_constraintStart_toStartOf="@+id/layout_gender" />

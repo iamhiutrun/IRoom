@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_verify"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
@@ -113,7 +113,7 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="@+id/welcome"
             app:layout_constraintStart_toStartOf="@+id/welcome"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_verify" />
 
         <TextView
             android:id="@+id/tv_verify_code"
@@ -151,7 +151,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_verify_code" />
 
         <Button
-            android:id="@+id/btn_signup"
+            android:id="@+id/btn_next"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
@@ -160,8 +160,8 @@
             android:textColor="@color/white"
             android:textSize="@dimen/size17"
             android:layout_marginTop="@dimen/margin10"
-            app:layout_constraintEnd_toEndOf="@+id/btn_login"
-            app:layout_constraintStart_toStartOf="@+id/btn_login"
+            app:layout_constraintEnd_toEndOf="@+id/btn_verify"
+            app:layout_constraintStart_toStartOf="@+id/btn_verify"
             app:layout_constraintTop_toBottomOf="@+id/edt_otp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

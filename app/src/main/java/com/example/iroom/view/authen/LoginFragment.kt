@@ -22,6 +22,8 @@ class LoginFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    lateinit var authenActivity: AuthenActivity
+
     private val viewModel: LoginViewModel by viewModels {
         viewModelFactory
     }
@@ -41,12 +43,13 @@ class LoginFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        authenActivity = (activity as AuthenActivity)
         binding.btnSignup.setOnClickListener {
-            (activity as AuthenActivity).replaceFragment(SignupFragment.newInstance(),false)
+            authenActivity.replaceFragment(SignupFragment.newInstance(),false)
         }
 
         binding.btnLogin.setOnClickListener {
-            Log.d("ABC", "onActivityCreated: ${viewModel.validateEmail("luongtrunghieuldb@gmail.com")}")
+            authenActivity.navigateToHome()
         }
     }
     companion object {
