@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.FilterFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/padding_20"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/tv_filter"
+       app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin25"
+        android:layout_marginTop="@dimen/margin50"
+        android:text="@string/filter"
+        app:layout_constraintEnd_toStartOf="@id/tv_clear"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size25"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:textStyle="bold"
+        android:textSize="@dimen/size20"
+        android:layout_marginEnd="@dimen/margin25"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_filter"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/item_price"
+        layout="@layout/item_filter"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin30"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin25"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <TextView
+        android:id="@+id/tv_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/min"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size20"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginStart="@dimen/margin50"
+        app:layout_constraintStart_toStartOf="@+id/item_price"
+        app:layout_constraintTop_toBottomOf="@+id/item_price" />
+
+    <TextView
+        android:id="@+id/tv_min_figures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin50"
+        android:layout_marginTop="@dimen/margin10"
+        android:text="500.000đ"
+        android:paddingHorizontal="@dimen/padding30"
+        android:background="@drawable/round_max"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size17"
+        android:layout_marginEnd="@dimen/margin25"
+        app:layout_constraintEnd_toEndOf="@+id/item_price"
+        app:layout_constraintTop_toBottomOf="@+id/item_price" />
+
+    <TextView
+        android:id="@+id/tv_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/max"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin10"
+        android:textSize="@dimen/size20"
+        app:layout_constraintStart_toStartOf="@+id/tv_min"
+        app:layout_constraintTop_toBottomOf="@+id/tv_min" />
+
+    <TextView
+        android:id="@+id/tv_max_figures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin25"
+        android:background="@drawable/round_max"
+        android:paddingHorizontal="@dimen/padding30"
+        android:text="1.000.000đ"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size17"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_max"
+        app:layout_constraintEnd_toEndOf="@+id/item_price"
+        app:layout_constraintTop_toTopOf="@+id/tv_max" />
+
+    <include
+        android:id="@+id/item_bedroom"
+        layout="@layout/item_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        app:layout_constraintStart_toStartOf="@+id/item_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_max" />
+
+    <include
+        android:id="@+id/layout_bedroom"
+        layout="@layout/item_add_minus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin20"
+        android:layout_marginTop="@dimen/margin10"
+        app:layout_constraintEnd_toEndOf="@+id/item_bedroom"
+        app:layout_constraintStart_toStartOf="@+id/item_bedroom"
+        app:layout_constraintTop_toBottomOf="@+id/item_bedroom" />
+
+    <include
+        android:id="@+id/item_capacity"
+        layout="@layout/item_filter"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        app:layout_constraintStart_toStartOf="@+id/item_price"
+        app:layout_constraintTop_toBottomOf="@+id/layout_bedroom" />
+
+    <include
+        android:id="@+id/layout_capacity"
+        layout="@layout/item_add_minus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginHorizontal="@dimen/margin20"
+        app:layout_constraintEnd_toEndOf="@+id/item_bedroom"
+        app:layout_constraintStart_toStartOf="@+id/item_bedroom"
+        app:layout_constraintTop_toBottomOf="@+id/item_capacity" />
+
+    <include
+        android:id="@+id/item_address"
+        layout="@layout/item_filter"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        app:layout_constraintStart_toStartOf="@+id/item_price"
+        app:layout_constraintTop_toBottomOf="@+id/layout_capacity" />
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city"
+        android:textSize="@dimen/size20"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginStart="@dimen/margin30"
+        app:layout_constraintTop_toBottomOf="@id/item_address"
+        app:layout_constraintStart_toStartOf="@id/item_address"/>
+
+    <TextView
+        android:id="@+id/tv_district"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin30"
+        android:text="@string/district"
+        android:layout_marginTop="@dimen/margin10"
+        android:textSize="@dimen/size20"
+        app:layout_constraintStart_toStartOf="@id/item_address"
+        app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+
+    <include
+        android:id="@+id/item_around_you"
+        layout="@layout/item_filter"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin30"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        app:layout_constraintStart_toStartOf="@+id/item_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_district" />
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin50"
+        android:layout_marginTop="@dimen/margin50"
+        android:text="@string/apply"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/item_around_you"
+        app:layout_constraintStart_toStartOf="@+id/item_around_you"
+        app:layout_constraintTop_toBottomOf="@+id/item_around_you" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

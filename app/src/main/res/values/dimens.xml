@@ -37,4 +37,7 @@
     <dimen name="height_150">150dp</dimen>
     <dimen name="width1">1dp</dimen>
     <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding30">30dp</dimen>
+    <dimen name="width20">20dp</dimen>
+    <dimen name="height20">20dp</dimen>
 </resources>

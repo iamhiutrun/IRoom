@@ -3,6 +3,7 @@ package com.example.iroom
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -29,5 +30,13 @@ class MainActivity : AppCompatActivity() {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(this)
         }
+    }
+
+    fun hideBottomNavBar() {
+        binding.bottomNavigationView.visibility = View.GONE
+    }
+
+    fun showBottomNavBar() {
+        binding.bottomNavigationView.visibility = View.VISIBLE
     }
 }
