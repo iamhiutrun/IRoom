@@ -53,6 +53,7 @@
             android:drawableLeft="@drawable/ic_search"
             android:drawablePadding="@dimen/padding10"
             android:hint="search"
+            android:focusable="false"
             android:background="@drawable/round_search"
             android:inputType="textEmailAddress"
             android:padding="@dimen/padding7"
