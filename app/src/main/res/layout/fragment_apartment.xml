@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.ApartmentFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/margin20">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_apartment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/im_apartment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_150"
+                android:background="@color/black"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_fav"
+                android:layout_width="@dimen/width30"
+                android:layout_height="@dimen/height30"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/im_apartment"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_apartment"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/im_apartment"
+                app:layout_constraintTop_toBottomOf="@+id/im_apartment" />
+
+            <TextView
+                android:id="@+id/tv_apartment_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Căn hộ cao cấp có ban công"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_service"
+                app:layout_constraintTop_toBottomOf="@+id/tv_service" />
+
+            <LinearLayout
+                android:id="@+id/layout_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin10"
+                app:layout_constraintStart_toStartOf="@+id/tv_apartment_description"
+                app:layout_constraintTop_toBottomOf="@id/tv_apartment_description">
+
+                <ImageView
+                    android:layout_width="@dimen/width10"
+                    android:layout_height="@dimen/height10"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin20"
+                    android:text="248 Nguyễn Trãi, Hà Đông" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_figures"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/layout_address"
+                app:layout_constraintTop_toBottomOf="@id/layout_address">
+
+                <ImageView
+                    android:layout_width="@dimen/width10"
+                    android:layout_height="@dimen/height10"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_figures"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin20"
+                    android:text="3 guest - 2 bedroom - 1bath" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="850.000 đ"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_apartment_description"
+                app:layout_constraintTop_toBottomOf="@+id/layout_figures" />
+
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Detail"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_apartment_description"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+            <TextView
+                android:id="@+id/tv_detail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Bungalow tiện nghi khép kín, thích hợp cho gia đình nhỏ bé của bạn. Có nhà ếp chung cho bố mẹ chuẩn bị bữa ăn cho những thiên thần của mình"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/tv_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_apartment">
+
+            <TextView
+                android:id="@+id/tv_host"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="About Host"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/im_avatar"
+                android:layout_width="@dimen/width70"
+                android:layout_height="@dimen/height70"
+                android:layout_below="@id/tv_host"
+                android:layout_marginStart="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin10"
+                android:background="@drawable/ic_profile_24" />
+
+            <TextView
+                android:id="@+id/tv_host_name"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_marginStart="@dimen/margin10"
+                android:layout_below="@id/tv_host"
+                android:layout_toRightOf="@id/im_avatar"
+                android:text="Ngô Phương Mai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_marginStart="@dimen/margin10"
+                android:layout_below="@id/tv_host_name"
+                android:text="3 apartment"
+                android:layout_toRightOf="@id/im_avatar"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_convenient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_host">
+
+            <TextView
+                android:id="@+id/tv_convenient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Convenient"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:id="@+id/table_convenient"
+                android:layout_below="@id/tv_convenient"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height100"
+                android:layout_marginHorizontal="@dimen/margin10"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_convenient">
+
+            <TextView
+                android:id="@+id/tv_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="View"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_city_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_below="@id/tv_view"
+                android:text="City View"/>
+
+            <ImageView
+                android:id="@+id/im_city"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height200"
+                android:layout_below="@id/tv_city_view" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_view">
+            <TextView
+                android:id="@+id/tv_price_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_special_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_price">
+            <TextView
+                android:id="@+id/tv_special_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Special Price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_special_price">
+            <TextView
+                android:id="@+id/tv_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Policy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_policy_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_below="@id/tv_policy"
+                android:text="Bungalow tiện nghi khép kín, thích hợp cho gia đình nhỏ bé của bạn. Có nhà ếp chung cho bố mẹ chuẩn bị bữa ăn cho những thiên thần của mình"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_checkin_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_policy_item"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Thời gian nhận phòng: 14h:00"
+                />
+
+            <TextView
+                android:id="@+id/tv_checkout_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_checkin_time"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Thời gian trả phòng: 9h:00" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_policy">
+            <TextView
+                android:id="@+id/tv_suggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="@string/suggestion"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_suggestion"
+                android:layout_below="@id/tv_suggestion"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_suggestion">
+            <TextView
+                android:id="@+id/tv_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="@string/feedback"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_feedback"
+                android:layout_below="@id/tv_feedback"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <Button
+            app:layout_constraintTop_toBottomOf="@id/layout_feedback"
+            android:id="@+id/btn_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20"
+            android:layout_marginHorizontal="@dimen/margin30"
+            android:textAllCaps="false"
+            android:text="Book"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

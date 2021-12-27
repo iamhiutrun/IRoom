@@ -40,4 +40,7 @@
     <dimen name="padding30">30dp</dimen>
     <dimen name="width20">20dp</dimen>
     <dimen name="height20">20dp</dimen>
+    <dimen name="margin17">17dp</dimen>
+    <dimen name="width70">70dp</dimen>
+    <dimen name="height70">70dp</dimen>
 </resources>

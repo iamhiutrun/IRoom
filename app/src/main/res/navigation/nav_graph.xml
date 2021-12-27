@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_apartmentFragment"
+            app:destination="@id/apartmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
@@ -47,4 +50,9 @@
         android:name="com.example.iroom.view.home.FilterFragment"
         android:label="fragment_filter"
         tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/apartmentFragment"
+        android:name="com.example.iroom.view.home.ApartmentFragment"
+        android:label="fragment_apartment"
+        tools:layout="@layout/fragment_apartment" />
 </navigation>
