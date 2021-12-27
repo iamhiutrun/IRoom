@@ -21,7 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin10"
-        android:background="@drawable/custom_edittext"
+        android:background="@drawable/round_edit_text"
         android:hint="@string/full_name"
         android:inputType="textEmailAddress"
         android:padding="@dimen/padding5"

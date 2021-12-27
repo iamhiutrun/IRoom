@@ -81,7 +81,7 @@
             android:layout_width="0dp"
             android:padding="@dimen/padding5"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext"
+            android:background="@drawable/round_edit_text"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:layout_marginTop="@dimen/margin10"
