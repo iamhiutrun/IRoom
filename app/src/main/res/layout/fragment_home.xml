@@ -64,11 +64,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_circle_city"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin20"
-            app:layout_constraintEnd_toEndOf="@+id/search_view"
-            app:layout_constraintStart_toStartOf="@+id/search_view"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/padding_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_view" />
 
         <TextView
@@ -90,8 +92,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin10"
-            app:layout_constraintEnd_toEndOf="@+id/search_view"
-            app:layout_constraintStart_toStartOf="@+id/search_view"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/padding_20"
+            app:layout_constraintEnd_toEndOf="@+id/rv_circle_city"
+            app:layout_constraintStart_toStartOf="@+id/rv_circle_city"
             app:layout_constraintTop_toBottomOf="@+id/tv_recommend" />
 
         <androidx.recyclerview.widget.RecyclerView

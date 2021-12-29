@@ -43,4 +43,7 @@
     <dimen name="margin17">17dp</dimen>
     <dimen name="width70">70dp</dimen>
     <dimen name="height70">70dp</dimen>
+    <dimen name="width60">60dp</dimen>
+    <dimen name="height60">60dp</dimen>
+    <dimen name="size12">12sp</dimen>
 </resources>

@@ -1,8 +1,10 @@
 package com.example.iroom.di
+
 import com.example.iroom.view.authen.LoginFragment
 import com.example.iroom.view.authen.ProfileFragment
 import com.example.iroom.view.authen.RegisterFragment
 import com.example.iroom.view.authen.SignupFragment
+import com.example.iroom.view.home.HomeFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -20,5 +22,8 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesProfileFragment(): ProfileFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesHomeFragment(): HomeFragment
 
 }
