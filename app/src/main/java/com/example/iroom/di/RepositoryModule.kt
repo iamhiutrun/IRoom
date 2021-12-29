@@ -1,9 +1,6 @@
 package com.example.iroom.di
 
-import com.example.iroom.model.repository.AuthRepoImp
-import com.example.iroom.model.repository.AuthenRepo
-import com.example.iroom.model.repository.CityRepo
-import com.example.iroom.model.repository.CityRepoImpl
+import com.example.iroom.model.repository.*
 import dagger.Binds
 import dagger.Module
 
@@ -15,4 +12,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun cityRepo(cityRepoImp: CityRepoImpl): CityRepo
+
+    @Binds
+    abstract fun apartmentRepo(apartmentRepoImpl: ApartmentRepoIml): ApartmentRepo
 }

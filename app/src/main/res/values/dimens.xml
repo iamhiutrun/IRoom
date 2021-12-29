@@ -46,4 +46,7 @@
     <dimen name="width60">60dp</dimen>
     <dimen name="height60">60dp</dimen>
     <dimen name="size12">12sp</dimen>
+    <dimen name="width150">150dp</dimen>
+    <dimen name="height150">150dp</dimen>
+    <dimen name="width170">170dp</dimen>
 </resources>

@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentHomeBinding
 import com.example.iroom.utils.Resource
+import com.example.iroom.view.home.adapter.ApartmentAdapter
 import com.example.iroom.view.home.adapter.CityAdapter
 import com.example.iroom.viewmodel.home.HomeViewModel
 import dagger.android.support.AndroidSupportInjection
@@ -31,6 +33,7 @@ class HomeFragment : Fragment() {
     }
 
     private lateinit var cityAdapter: CityAdapter
+    private lateinit var apartmentAdapter: ApartmentAdapter
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -73,6 +76,27 @@ class HomeFragment : Fragment() {
                 }
             }
         })
+
+        viewModel.apartments.observe(this, {
+            when (it) {
+                is Resource.Success -> {
+                    it.data?.let { data ->
+                        Log.d("TAG", "observeViewModel: $data")
+                        apartmentAdapter.setData(data)
+                    }
+                }
+                is Resource.Error -> {
+                    it.message?.let { message ->
+                        Toast.makeText(context, "An error occured: $message", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                }
+
+                is Resource.Loading -> {
+
+                }
+            }
+        })
     }
 
     private fun initAdapter() {
@@ -81,6 +105,12 @@ class HomeFragment : Fragment() {
             adapter = cityAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
+        apartmentAdapter = ApartmentAdapter()
+        binding.rvApartment.apply {
+            adapter = apartmentAdapter
+            layoutManager = GridLayoutManager(requireContext(),2)
         }
     }
 
