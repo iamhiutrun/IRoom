@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentHomeBinding
 import com.example.iroom.utils.Resource
 import com.example.iroom.view.home.adapter.ApartmentAdapter
+import com.example.iroom.view.home.adapter.ChipAdapter
 import com.example.iroom.view.home.adapter.CityAdapter
 import com.example.iroom.viewmodel.home.HomeViewModel
 import dagger.android.support.AndroidSupportInjection
@@ -34,6 +35,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var cityAdapter: CityAdapter
     private lateinit var apartmentAdapter: ApartmentAdapter
+    private lateinit var chipAdapter: ChipAdapter
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -62,6 +64,7 @@ class HomeFragment : Fragment() {
                     it.data?.let { data ->
                         Log.d("TAG", "observeViewModel: $data")
                         cityAdapter.setData(data)
+                        chipAdapter.setData(data)
                     }
                 }
                 is Resource.Error -> {
@@ -106,6 +109,13 @@ class HomeFragment : Fragment() {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
+        chipAdapter = ChipAdapter()
+        binding.rvCityChip.apply {
+            adapter = chipAdapter
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
 
         apartmentAdapter = ApartmentAdapter()
         binding.rvApartment.apply {

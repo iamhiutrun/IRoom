@@ -7,5 +7,6 @@ data class Apartment(
     val bedroom: Int,
     val bath: Int,
     val price: String,
-    val apartmentUrl: String
+    val apartmentUrl: String,
+    val address: String
 )
