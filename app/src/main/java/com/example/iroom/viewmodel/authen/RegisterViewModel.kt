@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.iroom.model.entity.User
-import com.example.iroom.model.repository.AuthenRepo
+import com.example.iroom.model.repository.AuthRepo
 import com.example.iroom.utils.Resource
 import com.example.iroom.viewmodel.common.BaseViewModel
 import kotlinx.coroutines.launch
@@ -14,7 +14,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 class RegisterViewModel @Inject constructor(
-    val authenRepo: AuthenRepo
+    val authRepo: AuthRepo
 ) : BaseViewModel() {
 
     private val _userInfo: MutableLiveData<Resource<User>> = MutableLiveData()
@@ -23,7 +23,7 @@ class RegisterViewModel @Inject constructor(
     fun sendOtpToEmail(email: String, activity: FragmentActivity) = viewModelScope.launch {
         _userInfo.postValue(Resource.Loading())
         try {
-            authenRepo.startPhoneNumberVerification(email, activity, ::handleException)
+            authRepo.startPhoneNumberVerification(email, activity, ::handleException)
         } catch (t: Throwable) {
             when (t) {
                 is IOException -> _userInfo.postValue(Resource.Error("Network Failure"))
@@ -33,7 +33,7 @@ class RegisterViewModel @Inject constructor(
     }
 
     fun verifyPhoneNumberWithCode(code: String) = viewModelScope.launch {
-        authenRepo.verifyPhoneNumberWithCode(code)
+        authRepo.verifyPhoneNumberWithCode(code)
     }
 
     fun handleException(message: String) {
@@ -44,7 +44,7 @@ class RegisterViewModel @Inject constructor(
     fun register(userInfo:User) = viewModelScope.launch {
         _userInfo.postValue(Resource.Loading())
         try {
-            authenRepo.register(userInfo)
+            authRepo.register(userInfo)
         } catch (t: Throwable) {
             when (t) {
                 is IOException -> _userInfo.postValue(Resource.Error("Network Failure"))

@@ -5,7 +5,7 @@ import com.example.iroom.model.entity.RegisterInfo
 import com.example.iroom.model.entity.User
 import com.example.iroom.utils.Resource
 
-interface AuthenRepo {
+interface AuthRepo {
 
     suspend fun login(email: String, password: String): Resource<User>
 

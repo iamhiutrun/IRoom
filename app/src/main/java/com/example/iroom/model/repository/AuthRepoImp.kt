@@ -3,7 +3,6 @@ package com.example.iroom.model.repository
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.example.iroom.IRoomApplication
-import com.example.iroom.model.entity.RegisterInfo
 import com.example.iroom.model.entity.User
 import com.example.iroom.utils.Resource
 import com.google.firebase.FirebaseException
@@ -14,9 +13,9 @@ import com.google.firebase.auth.PhoneAuthProvider
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class AuthenRepoImp @Inject constructor(
+class AuthRepoImp @Inject constructor(
     val application: IRoomApplication
-) : AuthenRepo {
+) : AuthRepo {
 
     val auth = FirebaseAuth.getInstance()
     private var storedVerificationId: String? = ""
@@ -26,11 +25,54 @@ class AuthenRepoImp @Inject constructor(
         TODO("Not yet implemented")
     }
 
-    override suspend fun verifyEmail(email: String) {
-        TODO("Not yet implemented")
+    override suspend fun startPhoneNumberVerification(
+        phoneNumber: String,
+        activity: FragmentActivity,
+        message: (String) -> Unit
+    ) {
+        val options = PhoneAuthOptions.newBuilder(auth)
+            .setPhoneNumber(phoneNumber)       // Phone number to verify
+            .setActivity(activity)
+            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+            .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                override fun onVerificationCompleted(p0: PhoneAuthCredential) {
+                    Log.d("TAG", "verify:  success")
+                }
+
+                override fun onVerificationFailed(p0: FirebaseException) {
+                    message(p0.message.toString())
+                    Log.d("TAG", "verify:  failed")
+                }
+
+                override fun onCodeSent(
+                    verificationId: String,
+                    token: PhoneAuthProvider.ForceResendingToken
+                ) {
+                    super.onCodeSent(verificationId, token)
+                    storedVerificationId = verificationId
+                    resendToken = token
+                    Log.d("TAG", "onCodeSent: ")
+                }
+            })
+        if (resendToken != null) {
+            options.setForceResendingToken(resendToken!!) // callback's ForceResendingToken
+        }
+        PhoneAuthProvider.verifyPhoneNumber(options.build())
+
     }
 
-    override suspend fun register(registerInfo: RegisterInfo) {
+    override suspend fun verifyPhoneNumberWithCode(code: String) {
+        val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
+        auth.signInWithCredential(credential).addOnCompleteListener {
+            if(it.isSuccessful){
+                Log.d("TAG", "verifyPhoneNumberWithCode: Success")
+            }else{
+                Log.d("TAG", "verifyPhoneNumberWithCode: Failed")
+            }
+        }
+    }
+
+    override suspend fun register(userInfo: User) {
         TODO("Not yet implemented")
     }
 }

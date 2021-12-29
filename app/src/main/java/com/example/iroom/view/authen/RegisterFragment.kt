@@ -29,8 +29,6 @@ class RegisterFragment : Fragment() {
         binding.btnRegister.setOnClickListener {
             authActivity.replaceFragment(LoginFragment.newInstance(), false)
         }
-
-
     }
 
 //    private fun getData(): User {

@@ -8,7 +8,7 @@ import dagger.Module
 abstract class RepositoryModule {
 
     @Binds
-    abstract fun authRepo(authRepoImp: AuthRepoImp): AuthenRepo
+    abstract fun authRepo(authRepoImp: AuthRepoImp): AuthRepo
 
     @Binds
     abstract fun cityRepo(cityRepoImp: CityRepoImpl): CityRepo

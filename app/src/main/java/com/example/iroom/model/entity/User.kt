@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class User(
-    @PrimaryKey var id: String?=null,
+    @PrimaryKey var id: String,
     @ColumnInfo(name = "fullName") var fullName: String,
     @ColumnInfo(name = "phoneNumber") var phoneNumber: String,
     @ColumnInfo(name = "birthday") var birthday : String,
