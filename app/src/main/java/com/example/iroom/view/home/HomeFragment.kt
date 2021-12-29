@@ -116,7 +116,6 @@ class HomeFragment : Fragment() {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-
         apartmentAdapter = ApartmentAdapter()
         binding.rvApartment.apply {
             adapter = apartmentAdapter

@@ -88,13 +88,20 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
 
     override suspend fun searchApartmentByKeyword(keyword: String): List<Apartment> {
         val apartments = withContext(Dispatchers.IO) {
-            var list  = mutableListOf<Apartment>()
-            for (i in apartments){
-                if(i.apartmentId.contains(keyword)){
+            var list = mutableListOf<Apartment>()
+            for (i in apartments) {
+                if (i.apartmentId.contains(keyword)) {
                     list.add(i)
                 }
             }
             list
+        }
+        return apartments
+    }
+
+    override suspend fun fetchCollectionApartments(): List<Apartment> {
+        val apartments = withContext(Dispatchers.IO) {
+            apartments
         }
         return apartments
     }

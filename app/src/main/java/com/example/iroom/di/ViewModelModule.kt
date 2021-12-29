@@ -2,6 +2,7 @@ package com.example.iroom.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.example.iroom.viewmodel.authen.LoginViewModel
+import com.example.iroom.viewmodel.collection.CollectionViewModel
 import com.example.iroom.viewmodel.common.BaseViewModel
 import com.example.iroom.viewmodel.common.ViewModelFactory
 import com.example.iroom.viewmodel.common.ViewModelKey
@@ -32,4 +33,9 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SearchViewModel::class)
     internal abstract fun searchViewModel(searchViewModel: SearchViewModel): BaseViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CollectionViewModel::class)
+    internal abstract fun collectionViewModel(collectionViewModel: CollectionViewModel): BaseViewModel
 }
