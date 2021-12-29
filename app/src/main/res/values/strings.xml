@@ -10,7 +10,7 @@
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
-    <string name="signup_with_email">SignUp with email</string>
+    <string name="signup_with_phone_number">SignUp with phone number</string>
     <string name="verify_email">Verify Email</string>
     <string name="verify_code">Verify Code</string>
     <string name="hint000000">000000</string>
@@ -45,5 +45,7 @@
     <string name="filter">Filter</string>
     <string name="suggestion">Suggestion</string>
     <string name="feedback">Feedback</string>
+    <string name="loading">Loading</string>
+    <string name="phone_number">Phone number</string>
     <string name="figures">%d guest - %d bedroom - %d bath"</string>
 </resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "534009178273",
+    "project_id": "iroom-f6560",
+    "storage_bucket": "iroom-f6560.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534009178273:android:49337f84f3ebcb794a68e0",
+        "android_client_info": {
+          "package_name": "com.example.iroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534009178273-6qnqe70j4sf5h9dm6lf1idu5eb1pvr47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iroom",
+            "certificate_hash": "1c74da9ee8a5bdba983e7bf474142aab8c770ced"
+          }
+        },
+        {
+          "client_id": "534009178273-957t5p03ja8kghgmfu5t84uub2p5ah80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL6Pj6Fc5BxI-wXi5uFmJYJnUaiw-Zd-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534009178273-957t5p03ja8kghgmfu5t84uub2p5ah80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

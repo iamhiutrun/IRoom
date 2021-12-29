@@ -53,10 +53,10 @@
             app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
         <TextView
-            android:id="@+id/tv_sign_up_with_email"
+            android:id="@+id/tv_sign_up_with_phone_number"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/signup_with_email"
+            android:text="@string/signup_with_phone_number"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -66,29 +66,29 @@
             app:layout_constraintStart_toStartOf="@+id/welcome"
             app:layout_constraintTop_toBottomOf="@+id/welcome" />
         <TextView
-            android:id="@+id/tv_email"
+            android:id="@+id/tv_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email"
+            android:text="@string/phone_number"
             android:textColor="@color/black"
             android:layout_marginTop="@dimen/margin15"
             android:textSize="@dimen/size15"
-            app:layout_constraintStart_toStartOf="@+id/tv_sign_up_with_email"
-            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_with_email" />
+            app:layout_constraintStart_toStartOf="@+id/tv_sign_up_with_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up_with_phone_number" />
 
         <EditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edt_phone_number"
             android:layout_width="0dp"
             android:padding="@dimen/padding5"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
+            android:background="@drawable/round_edit_text"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
             android:layout_marginTop="@dimen/margin10"
             android:textSize="@dimen/size20"
             app:layout_constraintEnd_toEndOf="@+id/welcome"
-            app:layout_constraintStart_toStartOf="@+id/tv_email"
-            app:layout_constraintTop_toBottomOf="@id/tv_email" />
+            app:layout_constraintStart_toStartOf="@+id/tv_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
 
         <Button
             android:id="@+id/btn_verify"
@@ -102,7 +102,7 @@
             android:layout_marginTop="@dimen/margin30"
             app:layout_constraintEnd_toEndOf="@+id/welcome"
             app:layout_constraintStart_toStartOf="@+id/welcome"
-            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone_number" />
 
         <TextView
             android:id="@+id/textView"
@@ -128,7 +128,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_count_down_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4 : 59"

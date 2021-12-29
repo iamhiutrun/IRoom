@@ -4,11 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.iroom.databinding.ActivityMainBinding
-import com.example.iroom.view.authen.AuthenActivity
+import com.example.iroom.view.authen.AuthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _binding: ActivityMainBinding
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun navigateToLogin() {
-        Intent(this@MainActivity, AuthenActivity::class.java).apply {
+        Intent(this@MainActivity, AuthActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
