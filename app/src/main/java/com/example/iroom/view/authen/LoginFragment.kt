@@ -2,7 +2,6 @@ package com.example.iroom.view.authen
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +21,7 @@ class LoginFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    lateinit var authenActivity: AuthenActivity
+    lateinit var authActivity: AuthActivity
 
     private val viewModel: LoginViewModel by viewModels {
         viewModelFactory
@@ -43,13 +42,13 @@ class LoginFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        authenActivity = (activity as AuthenActivity)
+        authActivity = (activity as AuthActivity)
         binding.btnSignup.setOnClickListener {
-            authenActivity.replaceFragment(SignupFragment.newInstance(),false)
+            authActivity.replaceFragment(SignupFragment.newInstance(),false)
         }
 
         binding.btnLogin.setOnClickListener {
-            authenActivity.navigateToHome()
+            authActivity.navigateToHome()
         }
     }
     companion object {

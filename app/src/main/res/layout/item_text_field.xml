@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tv_full_name"
+        android:id="@+id/tv_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/full_name"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edt_full_name"
+        android:id="@+id/edt_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin10"
@@ -26,7 +26,7 @@
         android:inputType="textEmailAddress"
         android:padding="@dimen/padding5"
         android:textSize="@dimen/size20"
-        app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
-        app:layout_constraintStart_toStartOf="@+id/tv_full_name"
-        app:layout_constraintTop_toBottomOf="@id/tv_full_name" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_info"
+        app:layout_constraintStart_toStartOf="@+id/tv_info"
+        app:layout_constraintTop_toBottomOf="@id/tv_info" />
 </androidx.constraintlayout.widget.ConstraintLayout>

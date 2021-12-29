@@ -8,12 +8,11 @@ import com.example.iroom.MainActivity
 import com.example.iroom.R
 
 
-class AuthenActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authen)
-
         replaceFragment(LoginFragment.newInstance(), true)
     }
 
@@ -45,7 +44,7 @@ class AuthenActivity : AppCompatActivity() {
     }
 
     fun navigateToHome() {
-        Intent(this@AuthenActivity, MainActivity::class.java).apply {
+        Intent(this@AuthActivity, MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

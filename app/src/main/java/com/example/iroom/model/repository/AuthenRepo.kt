@@ -1,14 +1,17 @@
 package com.example.iroom.model.repository
 
+import androidx.fragment.app.FragmentActivity
 import com.example.iroom.model.entity.RegisterInfo
 import com.example.iroom.model.entity.User
 import com.example.iroom.utils.Resource
 
 interface AuthenRepo {
 
-    suspend fun login(email:String,password:String) : Resource<User>
+    suspend fun login(email: String, password: String): Resource<User>
 
-    suspend fun verifyEmail(email:String)
+    suspend fun startPhoneNumberVerification(phoneNumber: String, activity: FragmentActivity, message: (String) -> Unit)
 
-    suspend fun register(registerInfo: RegisterInfo)
+    suspend fun register(userInfo:User)
+
+    suspend fun verifyPhoneNumberWithCode(code:String)
 }
