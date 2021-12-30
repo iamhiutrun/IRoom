@@ -3,6 +3,7 @@ package com.example.iroom.model.repository
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.example.iroom.IRoomApplication
+import com.example.iroom.model.entity.Gender
 import com.example.iroom.model.entity.User
 import com.example.iroom.utils.Resource
 import com.google.firebase.FirebaseException
@@ -10,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -69,6 +72,21 @@ class AuthRepoImp @Inject constructor(
             }else{
                 Log.d("TAG", "verifyPhoneNumberWithCode: Failed")
             }
+        }
+    }
+
+    override suspend fun fetchProfile(): User {
+        return withContext(Dispatchers.IO){
+            User(
+                id = "123",
+                fullName = "Nguyễn Huy Hoàn",
+                phoneNumber = "0329333964",
+                birthday = "28/02/2000",
+                address = "24/2/33 Ngoc Truc, Dai Mo, Nam Tu Liem, Ha Noi",
+                gender = Gender.Male,
+                password = "123",
+                email = "Abc@gmail.com"
+            );
         }
     }
 

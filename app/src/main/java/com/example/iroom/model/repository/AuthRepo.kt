@@ -9,9 +9,15 @@ interface AuthRepo {
 
     suspend fun login(email: String, password: String): Resource<User>
 
-    suspend fun startPhoneNumberVerification(phoneNumber: String, activity: FragmentActivity, message: (String) -> Unit)
+    suspend fun startPhoneNumberVerification(
+        phoneNumber: String,
+        activity: FragmentActivity,
+        message: (String) -> Unit
+    )
 
-    suspend fun register(userInfo:User)
+    suspend fun register(userInfo: User)
 
-    suspend fun verifyPhoneNumberWithCode(code:String)
+    suspend fun verifyPhoneNumberWithCode(code: String)
+
+    suspend fun fetchProfile() : User
 }

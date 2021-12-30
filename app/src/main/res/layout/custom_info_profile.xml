@@ -24,6 +24,5 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="@dimen/size15"
-        android:textStyle="bold" />
+        android:textSize="@dimen/size15" />
 </androidx.constraintlayout.widget.ConstraintLayout>

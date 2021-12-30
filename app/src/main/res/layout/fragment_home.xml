@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin20"
             android:clipToPadding="false"
-            android:paddingStart="@dimen/padding_20"
+            android:paddingStart="@dimen/padding20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_view" />
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin10"
             android:clipToPadding="false"
-            android:paddingStart="@dimen/padding_20"
+            android:paddingStart="@dimen/padding20"
             app:layout_constraintEnd_toEndOf="@+id/rv_circle_city"
             app:layout_constraintStart_toStartOf="@+id/rv_circle_city"
             app:layout_constraintTop_toBottomOf="@+id/tv_recommend" />
