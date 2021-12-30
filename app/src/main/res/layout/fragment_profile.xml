@@ -126,6 +126,7 @@
             android:layout_height="wrap_content"
             android:text="@string/logout"
             android:textAllCaps="false"
+            android:padding="@dimen/padding20"
             android:layout_marginBottom="@dimen/margin100"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/layout_gender"
