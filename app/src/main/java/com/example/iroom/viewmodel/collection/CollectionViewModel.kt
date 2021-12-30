@@ -4,12 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.iroom.model.entity.Apartment
-import com.example.iroom.model.entity.City
 import com.example.iroom.model.repository.ApartmentRepo
 import com.example.iroom.utils.Resource
 import com.example.iroom.viewmodel.common.BaseViewModel
 import kotlinx.coroutines.launch
-import java.lang.Exception
+import java.io.IOException
 import javax.inject.Inject
 
 class CollectionViewModel @Inject constructor(
@@ -27,8 +26,11 @@ class CollectionViewModel @Inject constructor(
         try {
             val data = apartmentRepo.fetchCollectionApartments()
             _apartments.postValue(Resource.Success(data))
-        } catch (e: Exception) {
-            _apartments.postValue(Resource.Error(message = e.message.toString()))
+        } catch (t: Throwable) {
+            when (t) {
+                is IOException -> _apartments.postValue(Resource.Error("Network Failure"))
+                else -> _apartments.postValue(Resource.Error("Conversion Error"))
+            }
         }
     }
 }
