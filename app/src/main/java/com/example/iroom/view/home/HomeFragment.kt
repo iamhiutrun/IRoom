@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentHomeBinding
+import com.example.iroom.model.entity.Apartment
 import com.example.iroom.utils.Resource
 import com.example.iroom.view.home.adapter.ApartmentAdapter
 import com.example.iroom.view.home.adapter.ChipAdapter
@@ -116,7 +117,7 @@ class HomeFragment : Fragment() {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-        apartmentAdapter = ApartmentAdapter()
+        apartmentAdapter = ApartmentAdapter(onClick = apartmentOnClick)
         binding.rvApartment.apply {
             adapter = apartmentAdapter
             layoutManager = GridLayoutManager(requireContext(),2)
@@ -127,6 +128,10 @@ class HomeFragment : Fragment() {
         binding.searchView.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment())
         }
+    }
+
+    var apartmentOnClick : (Apartment) -> Unit = {
+        Toast.makeText(context,it.description,Toast.LENGTH_SHORT).show()
     }
 
     companion object {
