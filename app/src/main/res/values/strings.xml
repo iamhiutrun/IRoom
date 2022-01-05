@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IROOM</string>
     <string name="forgot_password"><u>Forgot password</u></string>
-    <string name="verify_email_error">Authentication code have to be sent to your email, check it and fill code to below box</string>
+    <string name="verify_phone_number_message">Authentication code have to be sent to your phone number, check it and fill code to below box</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="iroom">Iroom</string>
@@ -11,7 +11,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
     <string name="signup_with_phone_number">SignUp with phone number</string>
-    <string name="verify_email">Verify Email</string>
+    <string name="verify_phone_number">Verify Phone Number</string>
     <string name="verify_code">Verify Code</string>
     <string name="hint000000">000000</string>
     <string name="next">Next</string>

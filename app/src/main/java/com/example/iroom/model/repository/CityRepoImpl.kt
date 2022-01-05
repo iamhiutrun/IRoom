@@ -9,14 +9,14 @@ class CityRepoImpl @Inject constructor() : CityRepo {
     override suspend fun fetchCities(): List<City> {
         val cities = withContext(Dispatchers.IO) {
             listOf<City>(
-                City("Hanoi", "https://bitly.com.vn/6a6my8"),
-                City("Thanh Hoa", "https://bitly.com.vn/6a6my8"),
-                City("Nghe An", "https://bitly.com.vn/6a6my8"),
-                City("Da Nang", "https://bitly.com.vn/6a6my8"),
-                City("Da Nang", "https://bitly.com.vn/6a6my8"),
-                City("Da Nang", "https://bitly.com.vn/6a6my8"),
-                City("Da Nang", "https://bitly.com.vn/6a6my8"),
-                City("Da Nang", "https://bitly.com.vn/6a6my8"),
+                City("Hanoi", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Thanh Hoa", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Nghe An", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Da Nang", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Da Nang", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Da Nang", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Da Nang", "https://i.postimg.cc/xdm8D4FG/city1.png"),
+                City("Da Nang", "https://i.postimg.cc/xdm8D4FG/city1.png"),
             )
         }
         return cities

@@ -95,7 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
-            android:text="@string/verify_email"
+            android:text="@string/verify_phone_number"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/size17"
@@ -104,65 +104,75 @@
             app:layout_constraintStart_toStartOf="@+id/welcome"
             app:layout_constraintTop_toBottomOf="@+id/edt_phone_number" />
 
-        <TextView
-            android:id="@+id/textView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin30"
-            android:text="@string/verify_email_error"
-            android:textAlignment="center"
+            android:id="@+id/layout_input_otp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@+id/welcome"
             app:layout_constraintStart_toStartOf="@+id/welcome"
-            app:layout_constraintTop_toBottomOf="@+id/btn_verify" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_verify">
 
-        <TextView
-            android:id="@+id/tv_verify_code"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="@dimen/size20"
-            android:layout_marginTop="@dimen/margin20"
-            android:text="@string/verify_code"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin30"
+                android:text="@string/verify_phone_number_message"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/tv_count_down_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4 : 59"
-            android:textColor="@color/black"
-            android:textSize="@dimen/size20"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_verify_code"
-            app:layout_constraintEnd_toEndOf="@id/welcome"
-            app:layout_constraintTop_toTopOf="@+id/tv_verify_code" />
+            <TextView
+                android:id="@+id/tv_verify_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20"
+                android:text="@string/verify_code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <EditText
-            android:id="@+id/edt_otp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin10"
-            android:hint="@string/hint000000"
-            android:textSize="@dimen/size50"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/tv_verify_code"
-            app:layout_constraintTop_toBottomOf="@+id/tv_verify_code" />
+            <TextView
+                android:id="@+id/tv_count_down_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 : 00"
+                android:textColor="@color/red"
+                android:textSize="@dimen/size20"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_verify_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_verify_code" />
 
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_button"
-            android:text="@string/next"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/size17"
-            android:layout_marginTop="@dimen/margin10"
-            app:layout_constraintEnd_toEndOf="@+id/btn_verify"
-            app:layout_constraintStart_toStartOf="@+id/btn_verify"
-            app:layout_constraintTop_toBottomOf="@+id/edt_otp" />
+            <EditText
+                android:id="@+id/edt_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint000000"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="@dimen/size50"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_verify_code"
+                app:layout_constraintTop_toBottomOf="@+id/tv_verify_code" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                android:background="@drawable/custom_button"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size17"
+                app:layout_constraintTop_toBottomOf="@+id/edt_otp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
