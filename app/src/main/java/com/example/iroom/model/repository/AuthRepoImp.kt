@@ -86,7 +86,7 @@ class AuthRepoImp @Inject constructor(
                 gender = Gender.Male,
                 password = "123",
                 email = "Abc@gmail.com"
-            );
+            )
         }
     }
 

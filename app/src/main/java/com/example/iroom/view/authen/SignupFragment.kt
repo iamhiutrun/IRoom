@@ -69,23 +69,25 @@ class SignupFragment : Fragment() {
 
         binding.btnVerify.setOnClickListener {
             viewModel.sendOtpToEmail(binding.edtPhoneNumber.text.toString(),requireActivity())
-            countDownTimer.start()
+
         }
 
         binding.btnNext.setOnClickListener {
             viewModel.verifyPhoneNumberWithCode(binding.edtOtp.text.toString())
         }
 
-        viewModel.userInfo.observe(this, Observer {
+        viewModel.senOtp.observe(this@SignupFragment, Observer {
             when (it) {
                 is Resource.Loading -> {
-                    loadingDialog.show(parentFragmentManager, "")
+                    loadingDialog.show(parentFragmentManager,"")
                 }
                 is Resource.Error -> {
                     loadingDialog.dismiss()
                 }
                 is Resource.Success -> {
-                    loadingDialog.dismiss()
+//                    loadingDialog.dismiss()
+                    binding.layoutInputOtp.visibility = View.VISIBLE
+                    countDownTimer.start()
                 }
             }
         })

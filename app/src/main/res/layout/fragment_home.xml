@@ -104,7 +104,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/search_view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/margin15"
             app:layout_constraintTop_toBottomOf="@+id/rv_city_chip" />
 
         <Button

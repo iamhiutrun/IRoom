@@ -13,7 +13,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/4xmnwd6S/hotel-presidente-4s.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
@@ -23,7 +23,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/4xmnwd6S/hotel-presidente-4s.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
@@ -33,7 +33,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/4xmnwd6S/hotel-presidente-4s.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
@@ -43,7 +43,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/MTMpbr1f/hotel-presidente.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
@@ -53,7 +53,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/Hnk7gtMp/img-20181102-193519-largejpg.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
@@ -63,7 +63,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/MTMpbr1f/hotel-presidente.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
@@ -73,7 +73,7 @@ class ApartmentRepoIml @Inject constructor() : ApartmentRepo {
             guest = 3,
             bedroom = 2,
             bath = 1,
-            apartmentUrl = "https://bitly.com.vn/6a6my8",
+            apartmentUrl = "https://i.postimg.cc/Hnk7gtMp/img-20181102-193519-largejpg.jpg",
             price = "850.000 đ",
             address = "131 Trần Phú, Hà Đông, Hà Nội"
         ),
