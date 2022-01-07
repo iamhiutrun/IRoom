@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin10">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/im_avatar"
+        android:layout_width="@dimen/width70"
+        android:layout_height="@dimen/height70"
+        android:layout_marginStart="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin10"
+        android:background="@drawable/ic_profile_24" />
+
+    <TextView
+        android:id="@+id/tv_host_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_toRightOf="@id/im_avatar"
+        android:text="Ngô Phương Mai"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_alignParentRight="true"
+        android:text="17/07/2022 17:54"
+        android:textSize="@dimen/size10"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_host_name"
+        android:layout_marginStart="@dimen/margin10"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin5"
+        android:layout_toRightOf="@id/im_avatar"
+        android:text="Great room, I will go back soon" />
+</RelativeLayout>

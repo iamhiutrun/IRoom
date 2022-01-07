@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentCollectionBinding
 import com.example.iroom.model.entity.Apartment
@@ -87,6 +88,7 @@ class CollectionFragment : Fragment() {
 
     var apartmentOnClick : (Apartment) -> Unit = {
         Toast.makeText(context,it.description,Toast.LENGTH_SHORT).show()
+        findNavController().navigate(CollectionFragmentDirections.actionCollectionFragmentToApartmentFragment(it))
     }
 
     companion object {

@@ -132,6 +132,7 @@ class HomeFragment : Fragment() {
 
     var apartmentOnClick : (Apartment) -> Unit = {
         Toast.makeText(context,it.description,Toast.LENGTH_SHORT).show()
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToApartmentFragment(it))
     }
 
     companion object {

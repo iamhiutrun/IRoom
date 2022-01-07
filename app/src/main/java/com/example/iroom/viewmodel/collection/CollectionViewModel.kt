@@ -28,8 +28,8 @@ class CollectionViewModel @Inject constructor(
             _apartments.postValue(Resource.Success(data))
         } catch (t: Throwable) {
             when (t) {
-                is IOException -> _apartments.postValue(Resource.Error("Network Failure"))
-                else -> _apartments.postValue(Resource.Error("Conversion Error"))
+//                is IOException -> _apartments.postValue(Resource.Error("Network Failure"))
+//                else -> _apartments.postValue(Resource.Error("Conversion Error"))
             }
         }
     }

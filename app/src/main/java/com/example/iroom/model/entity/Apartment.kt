@@ -1,5 +1,7 @@
 package com.example.iroom.model.entity
 
+import java.io.Serializable
+
 data class Apartment(
     val apartmentId: String,
     val description: String,
@@ -9,4 +11,4 @@ data class Apartment(
     val price: String,
     val apartmentUrl: String,
     val address: String
-)
+):Serializable
