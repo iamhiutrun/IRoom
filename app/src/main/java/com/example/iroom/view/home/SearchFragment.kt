@@ -12,14 +12,12 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentSearchBinding
+import com.example.iroom.model.entity.Apartment
 import com.example.iroom.utils.Resource
 import com.example.iroom.view.base.BaseFragment
 import com.example.iroom.view.home.adapter.ApartmentAdapter
-import com.example.iroom.view.home.adapter.ChipAdapter
-import com.example.iroom.view.home.adapter.CityAdapter
 import com.example.iroom.viewmodel.home.SearchViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
@@ -104,12 +102,16 @@ class SearchFragment : BaseFragment() {
     }
 
     private fun initAdapter() {
-        apartmentAdapter = ApartmentAdapter(isLarge = true)
+        apartmentAdapter = ApartmentAdapter(isLarge = true,onClick = apartmentOnClick)
         binding.rvApartment.apply {
             adapter = apartmentAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }
+    }
+
+    var apartmentOnClick : (Apartment) -> Unit = {
+        Toast.makeText(context,it.description,Toast.LENGTH_SHORT).show()
     }
 
     companion object {

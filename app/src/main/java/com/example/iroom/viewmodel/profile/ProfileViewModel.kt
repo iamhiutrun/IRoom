@@ -30,8 +30,8 @@ class ProfileViewModel @Inject constructor(
             _userInfo.postValue(Resource.Success(data = userInfo))
         } catch (t: Throwable) {
             when (t) {
-                is IOException -> _userInfo.postValue(Resource.Error("Network Failure"))
-                else -> _userInfo.postValue(Resource.Error("Conversion Error"))
+//                is IOException -> _userInfo.postValue(Resource.Error("Network Failure"))
+//                else -> _userInfo.postValue(Resource.Error("Conversion Error"))
             }
         }
     }

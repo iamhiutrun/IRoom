@@ -11,11 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentCollectionBinding
+import com.example.iroom.model.entity.Apartment
 import com.example.iroom.utils.Resource
-import com.example.iroom.view.home.HomeFragmentDirections
 import com.example.iroom.view.home.adapter.ApartmentAdapter
 import com.example.iroom.view.home.adapter.ChipAdapter
 import com.example.iroom.view.home.adapter.CityAdapter
@@ -79,12 +78,17 @@ class CollectionFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        apartmentAdapter = ApartmentAdapter(isLarge = true)
+        apartmentAdapter = ApartmentAdapter(isLarge = true,onClick = apartmentOnClick)
         binding.rvCollections.apply {
             adapter = apartmentAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }
+    }
+
+    var apartmentOnClick : (Apartment) -> Unit = {
+        Toast.makeText(context,it.description,Toast.LENGTH_SHORT).show()
+        findNavController().navigate(CollectionFragmentDirections.actionCollectionFragmentToApartmentFragment(it))
     }
 
     companion object {

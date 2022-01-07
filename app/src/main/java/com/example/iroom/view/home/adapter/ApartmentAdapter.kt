@@ -10,7 +10,7 @@ import com.example.iroom.databinding.ItemApartmentLargeBinding
 import com.example.iroom.databinding.ItemApartmentSmallBinding
 import com.example.iroom.model.entity.Apartment
 
-class ApartmentAdapter(var isLarge: Boolean = false) :
+class ApartmentAdapter(var isLarge: Boolean = false, var onClick: (Apartment)->Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items: List<Apartment> = listOf()
@@ -42,6 +42,9 @@ class ApartmentAdapter(var isLarge: Boolean = false) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val apartment = items[position]
+        holder.itemView.setOnClickListener {
+            onClick(apartment)
+        }
         when (holder) {
             is ApartmentLargeViewHolder -> {
                 holder.binding.tvApartmentDescription.text = apartment.description

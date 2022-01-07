@@ -26,7 +26,11 @@
         android:id="@+id/collectionFragment"
         android:name="com.example.iroom.view.collection.CollectionFragment"
         android:label="fragment_collection"
-        tools:layout="@layout/fragment_collection" />
+        tools:layout="@layout/fragment_collection" >
+        <action
+            android:id="@+id/action_collectionFragment_to_apartmentFragment"
+            app:destination="@id/apartmentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.iroom.view.profile.ProfileFragment"
@@ -54,5 +58,12 @@
         android:id="@+id/apartmentFragment"
         android:name="com.example.iroom.view.home.ApartmentFragment"
         android:label="fragment_apartment"
-        tools:layout="@layout/fragment_apartment" />
+        tools:layout="@layout/fragment_apartment" >
+        <argument
+            android:name="apartment"
+            app:argType="com.example.iroom.model.entity.Apartment" />
+        <action
+            android:id="@+id/action_apartmentFragment_self"
+            app:destination="@id/apartmentFragment" />
+    </fragment>
 </navigation>

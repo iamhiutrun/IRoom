@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.home.ApartmentFragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".view.home.ApartmentFragment">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin10"
         android:layout_marginHorizontal="@dimen/margin20">
+        <ImageButton
+            android:id="@+id/btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/padding10"
+            android:src="@drawable/ic_back"
+            android:layout_marginBottom="@dimen/margin10"/>
+
+        <ImageButton
+            android:id="@+id/btn_fav"
+            android:layout_width="@dimen/width30"
+            android:layout_height="@dimen/height30"
+            android:background="@drawable/ic_heart_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_apartment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/btn_back">
 
             <ImageView
                 android:id="@+id/im_apartment"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_150"
                 android:background="@color/black"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/btn_fav"
-                android:layout_width="@dimen/width30"
-                android:layout_height="@dimen/height30"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/im_apartment"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -145,7 +160,7 @@
                 android:textSize="@dimen/size20"
                 android:textStyle="bold" />
 
-            <ImageButton
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/im_avatar"
                 android:layout_width="@dimen/width70"
                 android:layout_height="@dimen/height70"
@@ -156,24 +171,25 @@
 
             <TextView
                 android:id="@+id/tv_host_name"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginTop="@dimen/margin10"
-                android:layout_marginStart="@dimen/margin10"
-                android:layout_below="@id/tv_host"
-                android:layout_toRightOf="@id/im_avatar"
-                android:text="Ngô Phương Mai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin10"
+                android:layout_below="@id/tv_host"
                 android:layout_marginStart="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_toRightOf="@id/im_avatar"
+                android:text="Ngô Phương Mai"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_apartment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tv_host_name"
-                android:text="3 apartment"
-                android:layout_toRightOf="@id/im_avatar"/>
+                android:layout_marginStart="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_toRightOf="@id/im_avatar"
+                android:text="3 apartment" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -193,13 +209,13 @@
                 android:textSize="@dimen/size20"
                 android:textStyle="bold" />
 
-            <TableLayout
-                android:id="@+id/table_convenient"
-                android:layout_below="@id/tv_convenient"
-                android:layout_marginTop="@dimen/margin10"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_convenient"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/height100"
-                android:layout_marginHorizontal="@dimen/margin10"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_convenient"
+                android:layout_marginHorizontal="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin10" />
         </RelativeLayout>
 
 
@@ -224,15 +240,17 @@
                 android:id="@+id/tv_city_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_marginTop="@dimen/margin10"
                 android:layout_below="@id/tv_view"
-                android:text="City View"/>
+                android:layout_marginTop="@dimen/margin10"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/margin10"
+                android:text="City View"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/im_city"
                 android:layout_width="match_parent"
+                android:scaleType="centerCrop"
                 android:layout_height="@dimen/height200"
                 android:layout_below="@id/tv_city_view" />
         </RelativeLayout>
@@ -243,6 +261,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_view">
+
             <TextView
                 android:id="@+id/tv_price_item"
                 android:layout_width="wrap_content"
@@ -252,6 +271,14 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/size20"
                 android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_special_price"
+                android:layout_marginTop="@dimen/margin5"
+                android:layout_below="@id/tv_price_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -260,6 +287,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_price">
+
             <TextView
                 android:id="@+id/tv_special_price"
                 android:layout_width="wrap_content"
@@ -269,6 +297,13 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/size20"
                 android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_normal_price"
+                android:layout_marginTop="@dimen/margin5"
+                android:layout_below="@id/tv_special_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -277,6 +312,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_special_price">
+
             <TextView
                 android:id="@+id/tv_policy"
                 android:layout_width="wrap_content"
@@ -286,14 +322,15 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/size20"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tv_policy_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin10"
                 android:layout_below="@id/tv_policy"
+                android:layout_marginTop="@dimen/margin10"
                 android:text="Bungalow tiện nghi khép kín, thích hợp cho gia đình nhỏ bé của bạn. Có nhà ếp chung cho bố mẹ chuẩn bị bữa ăn cho những thiên thần của mình"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/tv_checkin_time"
@@ -301,8 +338,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_policy_item"
                 android:layout_marginTop="@dimen/margin10"
-                android:text="Thời gian nhận phòng: 14h:00"
-                />
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Thời gian nhận phòng: 14h:00" />
 
             <TextView
                 android:id="@+id/tv_checkout_time"
@@ -310,6 +348,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_checkin_time"
                 android:layout_marginTop="@dimen/margin10"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:text="Thời gian trả phòng: 9h:00" />
         </RelativeLayout>
 
@@ -319,6 +359,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_policy">
+
             <TextView
                 android:id="@+id/tv_suggestion"
                 android:layout_width="wrap_content"
@@ -331,10 +372,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_suggestion"
-                android:layout_below="@id/tv_suggestion"
-                android:layout_marginTop="@dimen/margin10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_suggestion"
+                android:layout_marginTop="@dimen/margin10" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -343,6 +384,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_suggestion">
+
             <TextView
                 android:id="@+id/tv_feedback"
                 android:layout_width="wrap_content"
@@ -355,21 +397,23 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_feedback"
-                android:layout_below="@id/tv_feedback"
-                android:layout_marginTop="@dimen/margin10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_feedback"
+                android:layout_marginTop="@dimen/margin10" />
         </RelativeLayout>
 
         <Button
-            app:layout_constraintTop_toBottomOf="@id/layout_feedback"
             android:id="@+id/btn_book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin20"
             android:layout_marginHorizontal="@dimen/margin30"
+            android:layout_marginTop="@dimen/margin20"
+            android:layout_marginBottom="@dimen/margin100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Book"
             android:textAllCaps="false"
-            android:text="Book"/>
+            app:layout_constraintTop_toBottomOf="@id/layout_feedback" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
