@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class OrderRepoImpl @Inject constructor(): OrderRepo {
+class OrderRepoImpl @Inject constructor() : OrderRepo {
     override suspend fun fetchOrders(): List<Order> {
         val orders = withContext(Dispatchers.IO) {
             listOf<Order>(
@@ -123,5 +123,21 @@ class OrderRepoImpl @Inject constructor(): OrderRepo {
             )
         }
         return orders
+    }
+
+    override suspend fun fetchPayment(orderId: String): Payment {
+        val payment = withContext(Dispatchers.IO) {
+            Payment(
+                hostPayment = HostPayment(
+                    fullName = "Lương Trung Hiếu",
+                    avatar = "https://i.postimg.cc/Hnk7gtMp/img-20181102-193519-largejpg.jpg",
+                    bankAccount = "038201025814",
+                    bankName = "BIDV"
+                ),
+                transactionId = "32as54df54df54wa15wf84",
+                price = "850 000 đ"
+            )
+        }
+        return payment
     }
 }

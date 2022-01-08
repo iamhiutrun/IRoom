@@ -11,6 +11,7 @@ import com.example.iroom.viewmodel.home.ApartmentViewModel
 import com.example.iroom.viewmodel.home.HomeViewModel
 import com.example.iroom.viewmodel.home.SearchViewModel
 import com.example.iroom.viewmodel.order.OrderViewModel
+import com.example.iroom.viewmodel.order.PaymentViewModel
 import com.example.iroom.viewmodel.profile.ProfileViewModel
 import dagger.Binds
 import dagger.Module
@@ -62,4 +63,9 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(OrderViewModel::class)
     internal abstract fun orderViewModel(orderViewModel: OrderViewModel): BaseViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PaymentViewModel::class)
+    internal abstract fun paymentViewModel(paymentViewModel: PaymentViewModel): BaseViewModel
 }

@@ -3,19 +3,22 @@ package com.example.iroom.view.order.adapter
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.iroom.R
 import com.example.iroom.databinding.ItemHeaderOrderBinding
 import com.example.iroom.databinding.ItemOrderCardBinding
 import com.example.iroom.model.entity.Order
 import com.example.iroom.model.entity.Status
+import com.example.iroom.view.order.OrderFragmentDirections
 import smartadapter.viewholder.SmartViewHolder
 
-class OrderViewHolder(parentView: ViewGroup) :
+class OrderViewHolder(private val parentView: ViewGroup) :
     SmartViewHolder<Order>(parentView, R.layout.item_order_card) {
+     var binding = ItemOrderCardBinding.bind(itemView)
     override fun bind(item: Order) {
-        Log.d("TAG", "bind: order")
-        ItemOrderCardBinding.bind(itemView).apply {
+        binding.apply {
             tvOrderId.text = item.orderId
             tvPrice.text = item.price
             tvAddress.text = item.address
@@ -29,6 +32,10 @@ class OrderViewHolder(parentView: ViewGroup) :
                 .placeholder(R.drawable.circle_shape)
                 .into(imApartment)
 
+            itemView.setOnClickListener {
+                Toast.makeText(parentView.context,"order clicked",Toast.LENGTH_SHORT).show()
+            }
+
             when (item.status) {
                 Status.COMPLETED -> {
                     tvStatus.text = "COMPLETED"
@@ -36,6 +43,12 @@ class OrderViewHolder(parentView: ViewGroup) :
                 Status.WAITING -> {
                     tvStatus.visibility = View.GONE
                     layoutButton.visibility = View.VISIBLE
+                    btnPay.setOnClickListener {
+                        parentView.findNavController().navigate(OrderFragmentDirections.actionOrderFragmentToPaymentFragment(orderId = item.orderId))
+                    }
+                    btnCancel.setOnClickListener {
+                        Toast.makeText(parentView.context,"Cancel clicked",Toast.LENGTH_SHORT).show()
+                    }
                 }
                 Status.FAILURE -> {
 

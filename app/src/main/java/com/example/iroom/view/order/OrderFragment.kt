@@ -19,6 +19,9 @@ import com.example.iroom.viewmodel.order.OrderViewModel
 import dagger.android.support.AndroidSupportInjection
 import smartadapter.SmartRecyclerAdapter
 import smartadapter.stickyheader.StickyHeaderItemDecorationExtension
+import smartadapter.viewevent.listener.OnClickEventListener
+import smartadapter.viewevent.model.ViewEvent
+import smartadapter.viewevent.viewholder.OnItemClickEventListener
 import javax.inject.Inject
 
 class OrderFragment : Fragment() {
