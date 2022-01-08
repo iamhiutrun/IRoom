@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/radius8"
+    android:layout_marginTop="@dimen/margin10"
+    android:layout_marginBottom="@dimen/margin10"
+    android:layout_marginHorizontal="@dimen/margin25"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:padding="@dimen/padding10"
@@ -39,6 +42,7 @@
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginTop="@dimen/margin10"
+            android:scaleType="centerCrop"
             android:background="@color/black"
             app:layout_constraintStart_toStartOf="@+id/tv_order_id"
             app:layout_constraintTop_toBottomOf="@id/tv_order_id" />
@@ -56,20 +60,22 @@
 
         <TextView
             android:id="@+id/tv_apartment_description"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:text="Căn hộ cao cấp có ban công"
             android:maxLines="1"
             android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_service"
             app:layout_constraintTop_toBottomOf="@+id/tv_service" />
 
         <LinearLayout
             android:id="@+id/layout_address"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_apartment_description"
             app:layout_constraintTop_toBottomOf="@id/tv_apartment_description">
 
@@ -82,6 +88,9 @@
                 android:layout_marginStart="@dimen/margin20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+
                 android:text="248 Nguyễn Trãi, Hà Đông"/>
         </LinearLayout>
 
@@ -124,11 +133,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"
             app:layout_constraintTop_toTopOf="@+id/tv_check_out">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
+                android:background="@drawable/custom_button_deny"
                 android:text="@string/cancel"/>
             <Button
                 android:id="@+id/btn_pay"
@@ -136,6 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin10"
                 android:textAllCaps="false"
+                android:background="@drawable/custom_button"
                 android:text="@string/pay"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

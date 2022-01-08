@@ -15,4 +15,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun apartmentRepo(apartmentRepoImpl: ApartmentRepoIml): ApartmentRepo
+
+    @Binds
+    abstract fun orderRepo(orderRepoImpl: OrderRepoImpl): OrderRepo
 }

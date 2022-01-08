@@ -7,6 +7,7 @@ import com.example.iroom.view.collection.CollectionFragment
 import com.example.iroom.view.home.ApartmentFragment
 import com.example.iroom.view.home.HomeFragment
 import com.example.iroom.view.home.SearchFragment
+import com.example.iroom.view.order.OrderFragment
 import com.example.iroom.view.profile.ProfileFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -37,5 +38,9 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesApartmentFragment(): ApartmentFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesOrderFragment(): OrderFragment
+
 
 }

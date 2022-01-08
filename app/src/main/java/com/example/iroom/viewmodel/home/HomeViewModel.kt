@@ -20,7 +20,6 @@ class HomeViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     init {
-        Log.d("TAG", "Haha: ")
         fetchCities()
         fetchApartments()
     }

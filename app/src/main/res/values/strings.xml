@@ -49,4 +49,5 @@
     <string name="phone_number">Phone number</string>
     <string name="figures">%d guest - %d bedroom - %d bath"</string>
     <string name="apartment_count">%d apartments</string>
+    <string name="my_orders">My Orders</string>
 </resources>

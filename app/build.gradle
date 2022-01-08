@@ -133,4 +133,9 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // section sticky recycleView
+    implementation 'io.github.manneohlund:smart-recycler-adapter:5.0.0-rc01'
+    implementation 'io.github.manneohlund:smart-recycler-adapter-viewevent:1.0.0-beta03'
+    implementation 'io.github.manneohlund:smart-recycler-adapter-stickyheader:1.0.0-alpha02'
 }
