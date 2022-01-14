@@ -19,9 +19,6 @@ import com.example.iroom.viewmodel.order.OrderViewModel
 import dagger.android.support.AndroidSupportInjection
 import smartadapter.SmartRecyclerAdapter
 import smartadapter.stickyheader.StickyHeaderItemDecorationExtension
-import smartadapter.viewevent.listener.OnClickEventListener
-import smartadapter.viewevent.model.ViewEvent
-import smartadapter.viewevent.viewholder.OnItemClickEventListener
 import javax.inject.Inject
 
 class OrderFragment : Fragment() {
@@ -58,15 +55,14 @@ class OrderFragment : Fragment() {
     private fun initAdapter() {
         orderAdapter = SmartRecyclerAdapter
             .empty()
-            .map(Order::class,OrderViewHolder::class)
-            .map(String::class,HeaderViewHolder::class)
-            .add(StickyHeaderItemDecorationExtension(
-                headerItemType = String::class
-            ))
+            .map(Order::class, OrderViewHolder::class)
+            .map(String::class, HeaderViewHolder::class)
+            .add(
+                StickyHeaderItemDecorationExtension(
+                    headerItemType = String::class
+                )
+            )
             .into<SmartRecyclerAdapter>(binding.rvOrders)
-        binding.rvOrders.apply {
-            adapter = orderAdapter
-        }
     }
 
     private fun observeViewModel() {
@@ -75,7 +71,7 @@ class OrderFragment : Fragment() {
                 is Resource.Success -> {
                     it.data?.let { data ->
                         Log.d("TAG", "observeViewModel: $data")
-                        orderAdapter.setItems(data.toMutableList(),notifyDataSetChanged = true)
+                        orderAdapter.setItems(data.toMutableList(), notifyDataSetChanged = true)
                     }
                 }
                 is Resource.Error -> {

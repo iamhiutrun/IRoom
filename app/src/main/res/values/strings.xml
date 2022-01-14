@@ -50,4 +50,5 @@
     <string name="figures">%d guest - %d bedroom - %d bath"</string>
     <string name="apartment_count">%d apartments</string>
     <string name="my_orders">My Orders</string>
+    <string name="order_has_accepted">Order has accepted</string>
 </resources>

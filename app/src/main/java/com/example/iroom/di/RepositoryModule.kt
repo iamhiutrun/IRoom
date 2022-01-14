@@ -18,4 +18,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun orderRepo(orderRepoImpl: OrderRepoImpl): OrderRepo
+
+    @Binds
+    abstract fun notificationRepo(notificationRepo: NotificationRepoImpl): NotificationRepo
 }

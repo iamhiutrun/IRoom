@@ -7,6 +7,7 @@ import com.example.iroom.view.collection.CollectionFragment
 import com.example.iroom.view.home.ApartmentFragment
 import com.example.iroom.view.home.HomeFragment
 import com.example.iroom.view.home.SearchFragment
+import com.example.iroom.view.notification.NotificationFragment
 import com.example.iroom.view.order.OrderFragment
 import com.example.iroom.view.order.PaymentFragment
 import com.example.iroom.view.profile.ProfileFragment
@@ -45,6 +46,9 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesPaymentFragment(): PaymentFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesNotificationFragment(): NotificationFragment
 
 
 }
