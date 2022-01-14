@@ -72,6 +72,10 @@ class ApartmentFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        binding.btnBook.setOnClickListener {
+            findNavController().navigate(ApartmentFragmentDirections.actionApartmentFragmentToBookingFragment());
+        }
     }
 
     private fun bindData() {
