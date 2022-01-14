@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.iroom.view.customer.CustomerActivity
 import com.example.iroom.R
+import com.example.iroom.view.host.HostActivity
 
 
 class AuthActivity : AppCompatActivity() {

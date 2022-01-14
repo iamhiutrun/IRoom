@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/revenueFragment"
+        android:icon="@drawable/home_selector"
+        android:title="Revenue" />
+
+    <item
+        android:id="@+id/hostRoomFragment"
+        android:icon="@drawable/collection_selector"
+        android:title="Room" />
+
+    <item
+        android:id="@+id/hostOrderFragment"
+        android:icon="@drawable/order_selector"
+        android:title="Orders" />
+
+    <item
+        android:id="@+id/hostNotificationFragment"
+        android:icon="@drawable/ic_notifications_24"
+        android:title="Notification" />
+
+    <item
+        android:id="@+id/hostProfileFragment"
+        android:icon="@drawable/profile_selector"
+        android:title="Profile" />
+
+
+</menu>
