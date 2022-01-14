@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentNotificationBinding
 import com.example.iroom.model.entity.Notification
 import com.example.iroom.utils.Resource
-import com.example.iroom.view.home.adapter.CityAdapter
 import com.example.iroom.view.notification.adapter.NotificationAdapter
 import com.example.iroom.viewmodel.notification.NotificationViewModel
 import dagger.android.support.AndroidSupportInjection

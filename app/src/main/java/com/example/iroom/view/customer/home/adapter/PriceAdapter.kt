@@ -1,14 +1,11 @@
-package com.example.iroom.view.home.adapter
+package com.example.iroom.view.customer.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.iroom.R
-import com.example.iroom.databinding.ItemCircleCityBinding
 import com.example.iroom.databinding.ItemPriceBinding
-import com.example.iroom.model.entity.City
 import com.example.iroom.model.entity.Price
 
 class PriceAdapter : RecyclerView.Adapter<PriceAdapter.PriceViewHolder>() {

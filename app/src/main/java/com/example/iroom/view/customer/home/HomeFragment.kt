@@ -1,4 +1,4 @@
-package com.example.iroom.view.home
+package com.example.iroom.view.customer.home
 
 import android.content.Context
 import android.os.Bundle
@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iroom.databinding.FragmentHomeBinding
 import com.example.iroom.model.entity.Apartment
 import com.example.iroom.utils.Resource
-import com.example.iroom.view.home.adapter.ApartmentAdapter
-import com.example.iroom.view.home.adapter.ChipAdapter
-import com.example.iroom.view.home.adapter.CityAdapter
+import com.example.iroom.view.customer.home.adapter.ApartmentAdapter
+import com.example.iroom.view.customer.home.adapter.ChipAdapter
+import com.example.iroom.view.customer.home.adapter.CityAdapter
 import com.example.iroom.viewmodel.home.HomeViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject

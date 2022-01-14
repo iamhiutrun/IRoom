@@ -1,4 +1,4 @@
-package com.example.iroom.view.profile
+package com.example.iroom.view.customer.profile
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import com.example.iroom.MainActivity
+import com.example.iroom.view.customer.CustomerActivity
 import com.example.iroom.databinding.FragmentProfileBinding
 import com.example.iroom.model.entity.User
 import com.example.iroom.utils.Resource
@@ -20,7 +20,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var _binding: FragmentProfileBinding
     private val binding get() = _binding
-    lateinit var mainActivity: MainActivity
+    lateinit var customerActivity: CustomerActivity
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -44,9 +44,9 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity = (activity as MainActivity)
+        customerActivity = (activity as CustomerActivity)
         binding.btnLogout.setOnClickListener {
-            mainActivity.navigateToLogin()
+            customerActivity.navigateToLogin()
         }
         init()
         observeData()

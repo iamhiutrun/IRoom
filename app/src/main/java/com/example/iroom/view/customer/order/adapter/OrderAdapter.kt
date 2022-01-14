@@ -1,4 +1,4 @@
-//package com.example.iroom.view.order.adapter
+//package com.example.iroom.view.customer.order.adapter
 //
 //import android.view.LayoutInflater
 //import android.view.View

@@ -1,4 +1,4 @@
-package com.example.iroom.view.home.adapter
+package com.example.iroom.view.customer.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View

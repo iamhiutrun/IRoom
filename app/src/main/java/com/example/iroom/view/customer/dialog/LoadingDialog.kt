@@ -1,4 +1,4 @@
-package com.example.iroom.view.dialog
+package com.example.iroom.view.customer.dialog
 
 import android.app.Dialog
 import android.os.Bundle

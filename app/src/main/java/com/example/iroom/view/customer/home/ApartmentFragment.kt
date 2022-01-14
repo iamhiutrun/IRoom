@@ -1,4 +1,4 @@
-package com.example.iroom.view.home
+package com.example.iroom.view.customer.home
 
 import android.content.Context
 import android.os.Bundle
@@ -19,10 +19,10 @@ import com.example.iroom.R
 import com.example.iroom.databinding.FragmentApartmentBinding
 import com.example.iroom.model.entity.Apartment
 import com.example.iroom.utils.Resource
-import com.example.iroom.view.home.adapter.ApartmentAdapter
-import com.example.iroom.view.home.adapter.ConvenientAdapter
-import com.example.iroom.view.home.adapter.FeedbackAdapter
-import com.example.iroom.view.home.adapter.PriceAdapter
+import com.example.iroom.view.customer.home.adapter.ApartmentAdapter
+import com.example.iroom.view.customer.home.adapter.ConvenientAdapter
+import com.example.iroom.view.customer.home.adapter.FeedbackAdapter
+import com.example.iroom.view.customer.home.adapter.PriceAdapter
 import com.example.iroom.viewmodel.home.ApartmentViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject

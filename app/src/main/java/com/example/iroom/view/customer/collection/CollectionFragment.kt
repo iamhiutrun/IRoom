@@ -1,37 +1,35 @@
-package com.example.iroom.view.home
+package com.example.iroom.view.customer.collection
 
 import android.content.Context
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.iroom.databinding.FragmentSearchBinding
+import com.example.iroom.databinding.FragmentCollectionBinding
 import com.example.iroom.model.entity.Apartment
 import com.example.iroom.utils.Resource
-import com.example.iroom.view.base.BaseFragment
-import com.example.iroom.view.home.adapter.ApartmentAdapter
-import com.example.iroom.viewmodel.home.SearchViewModel
+import com.example.iroom.view.customer.home.adapter.ApartmentAdapter
+import com.example.iroom.viewmodel.collection.CollectionViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class SearchFragment : BaseFragment() {
-    private lateinit var _binding: FragmentSearchBinding
+class CollectionFragment : Fragment() {
+    private lateinit var _binding: FragmentCollectionBinding
     private val binding get() = _binding
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel: SearchViewModel by viewModels {
+
+    private val viewModel: CollectionViewModel by viewModels {
         viewModelFactory
     }
-
     private lateinit var apartmentAdapter: ApartmentAdapter
 
     override fun onAttach(context: Context) {
@@ -43,42 +41,17 @@ class SearchFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSearchBinding.inflate(layoutInflater)
+        _binding = FragmentCollectionBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setOnKeywordChange()
-        observerData()
         initAdapter()
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
-        binding.tvFilter.setOnClickListener {
-            findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToFilterFragment())
-        }
+        observeViewModel()
     }
 
-    private fun setOnKeywordChange() {
-        binding.searchView.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                viewModel.searchApartmentByKeyword(p0.toString())
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-
-        })
-    }
-
-    fun observerData() {
+    private fun observeViewModel() {
         viewModel.apartments.observe(this, {
             when (it) {
                 is Resource.Success -> {
@@ -103,7 +76,7 @@ class SearchFragment : BaseFragment() {
 
     private fun initAdapter() {
         apartmentAdapter = ApartmentAdapter(isLarge = true,onClick = apartmentOnClick)
-        binding.rvApartment.apply {
+        binding.rvCollections.apply {
             adapter = apartmentAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -112,12 +85,15 @@ class SearchFragment : BaseFragment() {
 
     var apartmentOnClick : (Apartment) -> Unit = {
         Toast.makeText(context,it.description,Toast.LENGTH_SHORT).show()
+        findNavController().navigate(CollectionFragmentDirections.actionCollectionFragmentToApartmentFragment(it))
     }
 
     companion object {
+
         @JvmStatic
         fun newInstance() =
-            SearchFragment().apply {
+            CollectionFragment().apply {
+
             }
     }
 }

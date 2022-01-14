@@ -3,14 +3,14 @@ package com.example.iroom.di
 import com.example.iroom.view.authen.LoginFragment
 import com.example.iroom.view.authen.RegisterFragment
 import com.example.iroom.view.authen.SignupFragment
-import com.example.iroom.view.collection.CollectionFragment
-import com.example.iroom.view.home.ApartmentFragment
-import com.example.iroom.view.home.HomeFragment
-import com.example.iroom.view.home.SearchFragment
+import com.example.iroom.view.customer.collection.CollectionFragment
+import com.example.iroom.view.customer.home.ApartmentFragment
+import com.example.iroom.view.customer.home.HomeFragment
+import com.example.iroom.view.customer.home.SearchFragment
 import com.example.iroom.view.notification.NotificationFragment
-import com.example.iroom.view.order.OrderFragment
-import com.example.iroom.view.order.PaymentFragment
-import com.example.iroom.view.profile.ProfileFragment
+import com.example.iroom.view.customer.order.OrderFragment
+import com.example.iroom.view.customer.order.PaymentFragment
+import com.example.iroom.view.customer.profile.ProfileFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

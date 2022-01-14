@@ -1,17 +1,15 @@
-package com.example.iroom.view.order.adapter
+package com.example.iroom.view.customer.order.adapter
 
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.iroom.R
-import com.example.iroom.databinding.ItemHeaderOrderBinding
 import com.example.iroom.databinding.ItemOrderCardBinding
 import com.example.iroom.model.entity.Order
 import com.example.iroom.model.entity.Status
-import com.example.iroom.view.order.OrderFragmentDirections
+import com.example.iroom.view.customer.order.OrderFragmentDirections
 import smartadapter.viewholder.SmartViewHolder
 
 class OrderViewHolder(private val parentView: ViewGroup) :

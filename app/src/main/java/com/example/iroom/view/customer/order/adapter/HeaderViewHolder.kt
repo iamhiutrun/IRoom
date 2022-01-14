@@ -1,9 +1,8 @@
-package com.example.iroom.view.order.adapter
+package com.example.iroom.view.customer.order.adapter
 
 import android.view.ViewGroup
 import com.example.iroom.R
 import com.example.iroom.databinding.ItemHeaderOrderBinding
-import com.example.iroom.model.entity.Order
 import smartadapter.viewholder.SmartViewHolder
 import java.util.*
 
