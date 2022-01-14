@@ -23,11 +23,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_notification"
-        android:layout_marginTop="@dimen/margin25"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/tv_notification"
-        app:layout_constraintStart_toStartOf="@+id/tv_notification"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/margin50"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/margin20"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_notification" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

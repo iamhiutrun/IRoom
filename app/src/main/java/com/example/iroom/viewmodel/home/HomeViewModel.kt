@@ -1,6 +1,5 @@
 package com.example.iroom.viewmodel.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -11,7 +10,6 @@ import com.example.iroom.model.repository.CityRepo
 import com.example.iroom.utils.Resource
 import com.example.iroom.viewmodel.common.BaseViewModel
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
@@ -47,7 +45,7 @@ class HomeViewModel @Inject constructor(
             val data = apartmentRepo.fetchApartments()
             _apartments.postValue(Resource.Success(data))
         } catch (e: Exception) {
-            _apartments.postValue(Resource.Error(message = e.message.toString()))
+//            _apartments.postValue(Resource.Error(message = e.message.toString()))
         }
     }
 }

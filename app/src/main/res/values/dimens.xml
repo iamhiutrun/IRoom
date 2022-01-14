@@ -54,4 +54,6 @@
     <dimen name="height170">170dp</dimen>
     <dimen name="width180">180dp</dimen>
     <dimen name="height180">180dp</dimen>
+    <dimen name="width100">100dp</dimen>
+    <dimen name="height80">80dp</dimen>
 </resources>

@@ -10,6 +10,7 @@ import com.example.iroom.viewmodel.common.ViewModelKey
 import com.example.iroom.viewmodel.home.ApartmentViewModel
 import com.example.iroom.viewmodel.home.HomeViewModel
 import com.example.iroom.viewmodel.home.SearchViewModel
+import com.example.iroom.viewmodel.notification.NotificationViewModel
 import com.example.iroom.viewmodel.order.OrderViewModel
 import com.example.iroom.viewmodel.order.PaymentViewModel
 import com.example.iroom.viewmodel.profile.ProfileViewModel
@@ -30,7 +31,6 @@ internal abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @Singleton
     @ViewModelKey(HomeViewModel::class)
     internal abstract fun homeViewModel(homeViewModel: HomeViewModel): BaseViewModel
 
@@ -68,4 +68,9 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(PaymentViewModel::class)
     internal abstract fun paymentViewModel(paymentViewModel: PaymentViewModel): BaseViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(NotificationViewModel::class)
+    internal abstract fun notificationViewModel(notificationViewModel: NotificationViewModel): BaseViewModel
 }
