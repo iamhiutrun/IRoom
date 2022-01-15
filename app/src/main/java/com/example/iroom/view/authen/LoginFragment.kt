@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         authActivity = (activity as AuthActivity)
         binding.btnSignup.setOnClickListener {
-            authActivity.replaceFragment(SignupFragment.newInstance(),false)
+            authActivity.replaceFragment(RegisterFragment.newInstance(),false)
         }
 
         binding.btnLogin.setOnClickListener {
