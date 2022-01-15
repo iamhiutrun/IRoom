@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/host_nav_graph"
+    app:startDestination="@id/revenueFragment">
+
+    <fragment
+        android:id="@+id/revenueFragment"
+        android:name="com.example.iroom.view.host.revenue.HostRevenueFragment"
+        android:label="RevenueFragment" />
+    <fragment
+        android:id="@+id/hostRoomFragment"
+        android:name="com.example.iroom.view.host.room.HostRoomFragment"
+        android:label="HostRoomFragment" />
+    <fragment
+        android:id="@+id/hostOrderFragment"
+        android:name="com.example.iroom.view.host.order.HostOrderFragment"
+        android:label="HostOrderFragment" />
+    <fragment
+        android:id="@+id/hostNotificationFragment"
+        android:name="com.example.iroom.view.host.notification.HostNotificationFragment"
+        android:label="HostNotificationFragment" />
+
+    <fragment
+        android:id="@+id/hostProfileFragment"
+        android:name="com.example.iroom.view.host.profile.HostProfileFragment"
+        android:label="HostProfileFragment" />
+
+</navigation>

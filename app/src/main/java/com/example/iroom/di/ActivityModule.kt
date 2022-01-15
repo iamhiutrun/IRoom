@@ -1,6 +1,6 @@
 package com.example.iroom.di
 
-import com.example.iroom.MainActivity
+import com.example.iroom.view.customer.CustomerActivity
 import com.example.iroom.view.authen.AuthActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -9,7 +9,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
+    abstract fun contributeMainActivity(): CustomerActivity
 
     @ContributesAndroidInjector
     abstract fun contributeAuthenActivity(): AuthActivity

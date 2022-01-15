@@ -4,8 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.iroom.MainActivity
+import com.example.iroom.view.customer.CustomerActivity
 import com.example.iroom.R
+import com.example.iroom.view.host.HostActivity
 
 
 class AuthActivity : AppCompatActivity() {
@@ -44,7 +45,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     fun navigateToHome() {
-        Intent(this@AuthActivity, MainActivity::class.java).apply {
+        Intent(this@AuthActivity, CustomerActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

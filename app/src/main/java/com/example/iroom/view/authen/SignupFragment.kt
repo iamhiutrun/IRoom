@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.iroom.databinding.FragmentSignupBinding
 import com.example.iroom.utils.Resource
-import com.example.iroom.view.dialog.LoadingDialog
+import com.example.iroom.view.customer.dialog.LoadingDialog
 import com.example.iroom.viewmodel.authen.RegisterViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
