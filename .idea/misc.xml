@@ -45,6 +45,7 @@
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_host_profile.xml" value="0.1606837606837607" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_host_profile_s.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_host_register.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_host_revenue.xml" value="0.16979166666666667" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_host_room.xml" value="0.203125" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_login.xml" value="0.23800131492439186" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/fragment_notification.xml" value="0.1606837606837607" />
@@ -66,6 +67,7 @@
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_feedback.xml" value="0.29786324786324786" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_filter.xml" value="0.29786324786324786" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_header_order.xml" value="0.144017094017094" />
+        <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_host_order.xml" value="0.5" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_notification_type_a.xml" value="0.5" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_notification_type_b.xml" value="0.29786324786324786" />
         <entry key="..\:/Users/luong/AndroidStudioProjects/IROOM/app/src/main/res/layout/item_order.xml" value="0.144017094017094" />

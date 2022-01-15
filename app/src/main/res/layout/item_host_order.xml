@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/radius8"
+    android:layout_marginTop="@dimen/margin10"
+    android:layout_marginBottom="@dimen/margin10"
+    android:layout_marginHorizontal="@dimen/margin25"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="@dimen/padding10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin5"
+            android:layout_marginBottom="5dp"
+            android:text="850.000 đ"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size15"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_phone_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rv_customer_name" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/im_customer"
+            android:layout_width="@dimen/width50"
+            android:layout_height="@dimen/height50"
+            android:background="@color/black"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/rv_customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin10"
+            android:text="Nguyễn Huy Hoàn"
+            android:textSize="@dimen/size12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/im_customer"
+            app:layout_constraintTop_toTopOf="@+id/im_customer" />
+
+        <TextView
+            android:id="@+id/tv_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="SĐT: 0382542229"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/rv_customer_name"
+            app:layout_constraintTop_toBottomOf="@+id/rv_customer_name" />
+
+
+
+        <LinearLayout
+            android:id="@+id/layout_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone_number">
+
+            <ImageView
+                android:layout_width="@dimen/width10"
+                android:layout_height="@dimen/height10"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin5"
+                android:ellipsize="end"
+                android:textSize="@dimen/size10"
+                android:maxLines="1"
+                android:text="14:30 28/01/2022" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_apartment_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin5"
+            android:text="Căn hộ cao cấp có ban công 60m2"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/im_customer"
+            app:layout_constraintTop_toBottomOf="@+id/im_customer" />
+
+        <LinearLayout
+            android:id="@+id/layout_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/im_customer"
+            app:layout_constraintTop_toBottomOf="@id/tv_apartment_description">
+
+            <ImageView
+                android:layout_width="@dimen/width10"
+                android:layout_height="@dimen/height10"
+                android:background="@color/black"/>
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textSize="@dimen/size12"
+                android:maxLines="1"
+                android:text="248 Nguyễn Trãi, Hà Đông"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_check_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:text="Checkin: 28/10/2021"
+            android:textSize="@dimen/size13"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/im_customer"
+            app:layout_constraintTop_toBottomOf="@+id/layout_address" />
+
+        <TextView
+            android:id="@+id/tv_check_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:text="Checkout: 28/10/2021"
+            android:textStyle="bold"
+            android:textSize="@dimen/size13"
+            app:layout_constraintStart_toStartOf="@+id/im_customer"
+            app:layout_constraintTop_toBottomOf="@+id/tv_check_in" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đã thanh toán"
+            android:textColor="@color/green_dark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_button"
+            app:layout_constraintStart_toStartOf="@+id/im_customer"
+            app:layout_constraintTop_toTopOf="@+id/layout_button" />
+
+        <LinearLayout
+            android:id="@+id/layout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_check_out">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_reject"
+                android:layout_width="@dimen/width70"
+                android:layout_height="@dimen/height40"
+                android:textSize="@dimen/size10"
+                android:textColor="@color/white"
+                android:text="@string/reject"
+                android:textAllCaps="false" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="@dimen/width70"
+                android:layout_height="@dimen/height40"
+                android:layout_marginStart="@dimen/margin10"
+                android:textSize="@dimen/size10"
+                android:textColor="@color/white"
+                android:text="@string/confirm"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
