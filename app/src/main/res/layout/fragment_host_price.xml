@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/margin20">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/size15"
+            android:text="Price" />
+    </RelativeLayout>
+
+    <com.savvi.rangedatepicker.CalendarPickerView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"/>
+
+    <EditText
+        android:id="@+id/edt_price"
+        android:layout_marginVertical="@dimen/margin20"
+        android:padding="@dimen/padding5"
+        android:background="@drawable/round_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/btn_reload"
+            android:text="@string/reload"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin20"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn_save"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/margin20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginVertical="@dimen/margin10"
+        android:textSize="@dimen/size15"
+        android:textColor="@color/black"
+        android:text="@string/other_fee_tax_clean"/>
+
+    <EditText
+        android:id="@+id/edt_other_fee"
+        android:padding="@dimen/padding5"
+        android:hint="Other fee"
+        android:background="@drawable/round_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create"
+        android:layout_marginTop="@dimen/margin100"
+        android:textAllCaps="false" />
+</LinearLayout>
