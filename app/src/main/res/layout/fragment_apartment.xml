@@ -22,6 +22,18 @@
             android:src="@drawable/ic_back"
             android:layout_marginBottom="@dimen/margin10"/>
 
+        <TextView
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_back"/>
+
         <ImageButton
             android:id="@+id/btn_fav"
             android:layout_width="@dimen/width30"

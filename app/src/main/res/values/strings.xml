@@ -51,4 +51,9 @@
     <string name="apartment_count">%d apartments</string>
     <string name="my_orders">My Orders</string>
     <string name="order_has_accepted">Order has accepted</string>
+    <string name="confirm">Confirm</string>
+    <string name="reject">Reject</string>
+    <string name="my_rooms">My Rooms</string>
+    <string name="add_new">New</string>
+    <string name="edit">Edit</string>
 </resources>

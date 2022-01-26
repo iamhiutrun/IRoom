@@ -140,4 +140,7 @@ dependencies {
     implementation 'io.github.manneohlund:smart-recycler-adapter-stickyheader:1.0.0-alpha02'
 
     implementation 'com.savvi.datepicker:rangepicker:1.3.0'
+
+//    //chart
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

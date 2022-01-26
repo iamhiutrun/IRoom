@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.iroom.databinding.FragmentBookingBinding
+import com.example.iroom.view.order.BookingFragmentDirections
 import com.savvi.rangedatepicker.CalendarPickerView
 import java.text.SimpleDateFormat
 import java.util.*
