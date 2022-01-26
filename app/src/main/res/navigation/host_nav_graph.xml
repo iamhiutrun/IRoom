@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/host_nav_graph"
     app:startDestination="@id/revenueFragment">
 
@@ -11,7 +12,11 @@
     <fragment
         android:id="@+id/hostRoomFragment"
         android:name="com.example.iroom.view.host.room.HostRoomFragment"
-        android:label="HostRoomFragment" />
+        android:label="HostRoomFragment" >
+        <action
+            android:id="@+id/action_hostRoomFragment_to_hostApartmentFragment"
+            app:destination="@id/hostApartmentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/hostOrderFragment"
         android:name="com.example.iroom.view.host.order.HostOrderFragment"
@@ -25,5 +30,14 @@
         android:id="@+id/hostProfileFragment"
         android:name="com.example.iroom.view.host.profile.HostProfileFragment"
         android:label="HostProfileFragment" />
+    <fragment
+        android:id="@+id/hostApartmentFragment"
+        android:name="com.example.iroom.view.customer.home.ApartmentFragment"
+        android:label="fragment_apartment"
+        tools:layout="@layout/fragment_apartment" >
+        <argument
+            android:name="apartment"
+            app:argType="com.example.iroom.model.entity.Apartment" />
+    </fragment>
 
 </navigation>

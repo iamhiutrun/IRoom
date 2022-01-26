@@ -45,7 +45,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     fun navigateToHome() {
-        Intent(this@AuthActivity, CustomerActivity::class.java).apply {
+        Intent(this@AuthActivity, HostActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

@@ -11,7 +11,7 @@
         android:text="@string/full_name"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="@dimen/size20"
+        android:textSize="@dimen/size15"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -25,7 +25,7 @@
         android:hint="@string/full_name"
         android:inputType="textEmailAddress"
         android:padding="@dimen/padding5"
-        android:textSize="@dimen/size20"
+        android:textSize="@dimen/size15"
         app:layout_constraintEnd_toEndOf="@+id/tv_info"
         app:layout_constraintStart_toStartOf="@+id/tv_info"
         app:layout_constraintTop_toBottomOf="@id/tv_info" />
