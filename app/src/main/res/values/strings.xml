@@ -56,4 +56,7 @@
     <string name="my_rooms">My Rooms</string>
     <string name="add_new">New</string>
     <string name="edit">Edit</string>
+    <string name="reload">Reload</string>
+    <string name="other_fee_tax_clean">Other fee (tax + clean)</string>
+    <string name="create">Create</string>
 </resources>
