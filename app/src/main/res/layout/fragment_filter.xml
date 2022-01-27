@@ -66,7 +66,7 @@
         app:layout_constraintStart_toStartOf="@+id/item_price"
         app:layout_constraintTop_toBottomOf="@+id/item_price" />
 
-    <TextView
+    <EditText
         android:id="@+id/tv_min_figures"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toStartOf="@+id/tv_min"
         app:layout_constraintTop_toBottomOf="@+id/tv_min" />
 
-    <TextView
+    <EditText
         android:id="@+id/tv_max_figures"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -169,6 +169,15 @@
         app:layout_constraintTop_toBottomOf="@id/item_address"
         app:layout_constraintStart_toStartOf="@id/item_address"/>
 
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner_city"
+        android:layout_width="@dimen/width100"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/tv_city"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        android:layout_marginEnd="@dimen/margin10"
+        app:layout_constraintTop_toTopOf="@+id/tv_city" />
+
     <TextView
         android:id="@+id/tv_district"
         android:layout_width="wrap_content"
@@ -179,6 +188,14 @@
         android:textSize="@dimen/size20"
         app:layout_constraintStart_toStartOf="@id/item_address"
         app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner_district"
+        android:layout_width="@dimen/width100"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin10"
+        app:layout_constraintBottom_toBottomOf="@id/tv_district"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear" />
 
     <include
         android:id="@+id/item_around_you"

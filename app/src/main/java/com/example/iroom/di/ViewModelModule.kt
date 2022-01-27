@@ -36,6 +36,7 @@ internal abstract class ViewModelModule {
 
     @Binds
     @IntoMap
+    @Singleton
     @ViewModelKey(SearchViewModel::class)
     internal abstract fun searchViewModel(searchViewModel: SearchViewModel): BaseViewModel
 
