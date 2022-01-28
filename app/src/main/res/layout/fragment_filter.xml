@@ -171,11 +171,15 @@
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spinner_city"
-        android:layout_width="@dimen/width100"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin10"
+        android:gravity="center"
+        android:background="@drawable/round_search"
+        android:layout_marginStart="@dimen/margin_70"
         app:layout_constraintBottom_toBottomOf="@id/tv_city"
         app:layout_constraintEnd_toEndOf="@+id/tv_clear"
-        android:layout_marginEnd="@dimen/margin10"
+        app:layout_constraintStart_toEndOf="@+id/tv_city"
         app:layout_constraintTop_toTopOf="@+id/tv_city" />
 
     <TextView
@@ -184,18 +188,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin30"
         android:text="@string/district"
-        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin20"
         android:textSize="@dimen/size20"
         app:layout_constraintStart_toStartOf="@id/item_address"
         app:layout_constraintTop_toBottomOf="@+id/tv_city" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spinner_district"
-        android:layout_width="@dimen/width100"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin10"
+
+        android:gravity="center"
+        android:background="@drawable/round_search"
+        android:layout_marginStart="@dimen/margin43"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@id/tv_district"
-        app:layout_constraintEnd_toEndOf="@+id/tv_clear" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_clear"
+        app:layout_constraintStart_toEndOf="@+id/tv_district" />
 
     <include
         android:id="@+id/item_around_you"

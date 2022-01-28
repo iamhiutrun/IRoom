@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookingFragment"
-        android:name="com.example.iroom.view.order.BookingFragment"
+        android:name="com.example.iroom.view.customer.order.BookingFragment"
         android:label="fragment_booking"
         tools:layout="@layout/fragment_booking" >
         <action

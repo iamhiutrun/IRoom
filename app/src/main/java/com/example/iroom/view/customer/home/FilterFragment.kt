@@ -2,17 +2,25 @@ package com.example.iroom.view.customer.home
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.iroom.R
 import com.example.iroom.databinding.FragmentFilterBinding
+import com.example.iroom.model.entity.city.VietnamCity
+import com.example.iroom.model.entity.city.VietnamCityItem
 import com.example.iroom.model.entity.search.*
+import com.example.iroom.utils.Extension
 import com.example.iroom.view.base.BaseFragment
 import com.example.iroom.viewmodel.home.SearchViewModel
+import com.google.gson.Gson
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -25,6 +33,9 @@ class FilterFragment : BaseFragment() {
     private val viewModel: SearchViewModel by viewModels {
         viewModelFactory
     }
+
+    lateinit var cityArray: ArrayList<String>
+    lateinit var wardArray: ArrayList<String>
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -44,14 +55,20 @@ class FilterFragment : BaseFragment() {
         bindData()
         setOnClick()
         observerData()
+        initAdapter()
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
     }
 
-    private fun observerData(){
+    private fun initAdapter() {
+
+    }
+
+
+    private fun observerData() {
         viewModel.filters.forEach {
-            when(it){
+            when (it) {
                 is PriceFilter -> {
                     binding.apply {
                         itemPrice.switchItem.isChecked = true
@@ -60,31 +77,62 @@ class FilterFragment : BaseFragment() {
                     }
                 }
 
-                is Bedroom ->{
+                is Bedroom -> {
                     binding.apply {
                         layoutBedroom.tvCount.text = it.count.toString()
                         itemBedroom.switchItem.isChecked = true
                     }
                 }
 
-                is Capacity ->{
+                is Capacity -> {
                     binding.apply {
                         layoutCapacity.tvCount.text = it.count.toString()
                         itemCapacity.switchItem.isChecked = true
                     }
                 }
 
-                is Address ->{
+                is Address -> {
                     binding.apply {
                         itemAddress.switchItem.isChecked = true
                     }
                 }
 
-                is AroundYou ->{
+                is AroundYou -> {
                     binding.itemAroundYou.switchItem.isChecked = true
                 }
             }
         }
+
+        viewModel.cities.observe(viewLifecycleOwner, {
+            var cities = it.map { city ->
+                city.name
+            }
+            cityArray = cities as ArrayList<String>
+            Log.d("TAG", "observerData: $cityArray")
+            binding.spinnerCity.apply {
+                adapter = ArrayAdapter(requireContext(), R.layout.item_dropdown, cityArray)
+                onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                        viewModel.setCurrentCity(it.get(p2))
+                    }
+
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                    }
+                }
+            }
+        })
+
+        viewModel.currentCity.observe(viewLifecycleOwner, {
+            var wards = it.districts.map { ward ->
+                ward.name
+            }
+            wardArray = wards as ArrayList<String>
+            Log.d("TAG", "observerData: $wardArray")
+            binding.spinnerDistrict.apply {
+                adapter = ArrayAdapter(requireContext(), R.layout.item_dropdown, wards)
+            }
+        })
     }
 
     private fun setOnClick() {

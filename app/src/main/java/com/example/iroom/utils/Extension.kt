@@ -1,5 +1,7 @@
 package com.example.iroom.utils
 
+import android.content.Context
+import java.io.IOException
 import java.lang.RuntimeException
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -19,10 +21,22 @@ class Extension {
                 }
 
                 hashtext
-            }
-            catch (e: NoSuchAlgorithmException) {
+            } catch (e: NoSuchAlgorithmException) {
                 throw RuntimeException(e)
             }
+        }
+
+        fun getJsonDataFromAsset(context: Context, fileName: String): String? {
+            val jsonString: String
+            try {
+                jsonString = context.assets.open(fileName).bufferedReader().use {
+                    it.readText()
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+                return null
+            }
+            return jsonString
         }
     }
 }

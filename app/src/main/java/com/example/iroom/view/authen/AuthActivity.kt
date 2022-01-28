@@ -1,12 +1,11 @@
 package com.example.iroom.view.authen
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.iroom.view.customer.CustomerActivity
 import com.example.iroom.R
-import com.example.iroom.view.host.HostActivity
+import com.example.iroom.view.customer.CustomerActivity
 
 
 class AuthActivity : AppCompatActivity() {
@@ -65,5 +64,4 @@ class AuthActivity : AppCompatActivity() {
 //            .addToBackStack(fragment.javaClass.simpleName)
 //        fragmentTransition.commit()
 //    }
-
 }
