@@ -11,6 +11,9 @@ import com.example.iroom.model.entity.city.District
 import com.example.iroom.model.entity.city.VietnamCity
 import com.example.iroom.model.entity.city.VietnamCityItem
 import com.example.iroom.model.repository.ApartmentRepo
+import com.example.iroom.model.repository.CityRepo
+import com.example.iroom.model.repository.CityRepoImpl
+import com.example.iroom.utils.CityProvider
 import com.example.iroom.utils.Extension
 import com.example.iroom.utils.Resource
 import com.example.iroom.viewmodel.common.BaseViewModel
@@ -25,10 +28,6 @@ class SearchViewModel @Inject constructor(
     private val application: IRoomApplication
 ) : BaseViewModel() {
 
-    init {
-        parseCity()
-    }
-
     private var _apartments: MutableLiveData<Resource<List<Apartment>>> = MutableLiveData()
     var apartments: LiveData<Resource<List<Apartment>>> = _apartments
 
@@ -37,7 +36,7 @@ class SearchViewModel @Inject constructor(
     private var _currentCity: MutableLiveData<VietnamCityItem> = MutableLiveData()
     var currentCity: LiveData<VietnamCityItem> = _currentCity
 
-    private var _cities: MutableLiveData<VietnamCity> = MutableLiveData()
+    private var _cities: MutableLiveData<VietnamCity> = MutableLiveData(CityProvider.cities)
     var cities: LiveData<VietnamCity> = _cities
 
     var wards: LiveData<List<District>> = Transformations.map(_currentCity) {
@@ -63,16 +62,7 @@ class SearchViewModel @Inject constructor(
         _filterCount.postValue(filters.size)
     }
 
-    private fun parseCity() = viewModelScope.launch {
-        val jsonFileString = Extension.getJsonDataFromAsset(application, "cities.json")
-        withContext(Dispatchers.IO) {
-            val gson = Gson()
-            var cities = gson.fromJson(jsonFileString, VietnamCity::class.java)
-            _cities.postValue(cities)
-        }
-    }
-
-    fun setCurrentCity(city : VietnamCityItem){
+    fun setCurrentCity(city: VietnamCityItem) {
         _currentCity.postValue(city)
     }
 }

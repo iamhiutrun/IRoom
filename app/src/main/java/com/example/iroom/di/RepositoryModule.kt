@@ -3,6 +3,7 @@ package com.example.iroom.di
 import com.example.iroom.model.repository.*
 import dagger.Binds
 import dagger.Module
+import javax.inject.Singleton
 
 @Module
 abstract class RepositoryModule {
