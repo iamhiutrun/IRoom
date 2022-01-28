@@ -74,7 +74,7 @@ class ApartmentFragment : Fragment() {
         }
 
         binding.btnBook.setOnClickListener {
-            findNavController().navigate(ApartmentFragmentDirections.actionApartmentFragmentToBookingFragment());
+            findNavController().navigate(ApartmentFragmentDirections.actionApartmentFragmentToBookingFragment())
         }
     }
 

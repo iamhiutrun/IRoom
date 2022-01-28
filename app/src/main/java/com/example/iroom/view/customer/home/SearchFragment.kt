@@ -78,8 +78,12 @@ class SearchFragment : BaseFragment() {
         })
     }
 
-    fun observerData() {
-        viewModel.apartments.observe(this, {
+    private fun observerData() {
+        viewModel.filterCount?.observe(viewLifecycleOwner,{
+            binding.tvFilter.text = "Filter ($it)"
+        })
+
+        viewModel.apartments?.observe(this, {
             when (it) {
                 is Resource.Success -> {
                     it.data?.let { data ->
