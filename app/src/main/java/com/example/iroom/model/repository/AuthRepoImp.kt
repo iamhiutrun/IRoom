@@ -5,13 +5,20 @@ import androidx.fragment.app.FragmentActivity
 import com.example.iroom.IRoomApplication
 import com.example.iroom.model.entity.Gender
 import com.example.iroom.model.entity.User
+import com.example.iroom.model.entity.register.Device
+import com.example.iroom.model.entity.register.LoginReqDTO
+import com.example.iroom.model.entity.register.SignUpReqDTO
+import com.example.iroom.utils.Extension.Companion.getDeviceName
+import com.example.iroom.utils.Extension.Companion.getMacAddress
 import com.example.iroom.utils.Resource
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -22,10 +29,23 @@ class AuthRepoImp @Inject constructor(
 
     val auth = FirebaseAuth.getInstance()
     private var storedVerificationId: String? = ""
-    private var resendToken: PhoneAuthProvider.ForceResendingToken?= null
+    private var resendToken: PhoneAuthProvider.ForceResendingToken? = null
+    private lateinit var firebaseListener: FirebaseListener
 
     override suspend fun login(email: String, password: String): Resource<User> {
         TODO("Not yet implemented")
+    }
+
+    override suspend fun login(loginReqDTO: LoginReqDTO) {
+        // get device info
+
+        // get FCM token
+        //
+//        loginReqDTO.device = Device(
+//            deviceOS = getDeviceName(),
+//            macAddress = getMacAddress(application)
+//        )
+
     }
 
     override suspend fun startPhoneNumberVerification(
@@ -61,22 +81,30 @@ class AuthRepoImp @Inject constructor(
             options.setForceResendingToken(resendToken!!) // callback's ForceResendingToken
         }
         PhoneAuthProvider.verifyPhoneNumber(options.build())
-
     }
 
     override suspend fun verifyPhoneNumberWithCode(code: String) {
         val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
-        auth.signInWithCredential(credential).addOnCompleteListener {
-            if(it.isSuccessful){
-                Log.d("TAG", "verifyPhoneNumberWithCode: Success")
-            }else{
+        auth.signInWithCredential(credential).addOnCompleteListener { authResult ->
+            if (authResult.isSuccessful) {
+                authResult.result?.user?.getIdToken(false)?.addOnSuccessListener { tokenResult ->
+                    tokenResult.token?.let { token ->
+                        firebaseListener.onReceivedVerifyTokenSuccess(token)
+                        Log.e("TAG", "verifyPhoneNumberWithCode: $token")
+                    }
+                    Log.d("TAG", "verifyPhoneNumberWithCode: Success")
+                }
+            } else {
                 Log.d("TAG", "verifyPhoneNumberWithCode: Failed")
+                authResult.exception?.let { error ->
+                    firebaseListener.onFailure(error)
+                }
             }
         }
     }
 
     override suspend fun fetchProfile(): User {
-        return withContext(Dispatchers.IO){
+        return withContext(Dispatchers.IO) {
             User(
                 id = "123",
                 fullName = "Nguyễn Huy Hoàn",
@@ -90,7 +118,34 @@ class AuthRepoImp @Inject constructor(
         }
     }
 
+    override fun setFirebaseListener(firebaseListener: FirebaseListener) {
+        this.firebaseListener = firebaseListener
+    }
+
+    override suspend fun getFCMToken(verifyToken: String) {
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener {
+                it.result?.let { fcmToken ->
+//                    val loginReqDTO = LoginReqDTO(
+//                        device = Device(it1, getDeviceName(), getMacAddress(application)),
+//                        verifyToken = verifyToken
+//                    )
+//                    firebaseListener.onReceivedFCMSuccess(loginRequest)
+                    Log.d("TAG", "getFCMToken: $fcmToken")
+                }
+            }.addOnFailureListener {
+                firebaseListener.onFailure(it)
+            }
+    }
+
+
     override suspend fun register(userInfo: User) {
         TODO("Not yet implemented")
     }
+}
+
+interface FirebaseListener {
+    fun onReceivedVerifyTokenSuccess(verifyToken: String): Job
+    fun onReceivedFCMSuccess(loginReqDTO: LoginReqDTO): Job
+    fun onFailure(e: Throwable)
 }

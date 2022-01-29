@@ -8,5 +8,6 @@ class Const {
         const val HTTP_CACHE_SIZE: Long = 10 * 1024 * 1024
         const val EMAIL_PATTERN = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"
         const val MIN_AGE_TO_JOIN_APP = -10
+        const val ANDROID = "Android"
     }
 }

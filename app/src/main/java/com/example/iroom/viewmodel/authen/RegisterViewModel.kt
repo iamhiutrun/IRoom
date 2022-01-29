@@ -7,17 +7,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.iroom.model.entity.Gender
 import com.example.iroom.model.entity.User
+import com.example.iroom.model.entity.register.LoginReqDTO
+import com.example.iroom.model.entity.register.SignUpReqDTO
 import com.example.iroom.model.repository.AuthRepo
+import com.example.iroom.model.repository.FirebaseListener
 import com.example.iroom.utils.Resource
 import com.example.iroom.viewmodel.common.BaseViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.IOException
 import javax.inject.Inject
 
 class RegisterViewModel @Inject constructor(
     val authRepo: AuthRepo
-) : BaseViewModel() {
+) : BaseViewModel(), FirebaseListener {
 
+    init {
+        authRepo.setFirebaseListener(this)
+    }
     private val _userInfo: MutableLiveData<Resource<User>> = MutableLiveData()
     val userInfo: LiveData<Resource<User>> = _userInfo
 
@@ -50,7 +59,7 @@ class RegisterViewModel @Inject constructor(
         authRepo.verifyPhoneNumberWithCode(code)
     }
 
-    fun handleException(message: String) {
+    private fun handleException(message: String) {
         Log.d("LoginViewModel", "handleException: $message")
         _userInfo.postValue(Resource.Error(message))
     }
@@ -65,5 +74,19 @@ class RegisterViewModel @Inject constructor(
                 else -> _userInfo.postValue(Resource.Error(t.message.toString()))
             }
         }
+    }
+
+    override fun onReceivedVerifyTokenSuccess(verifyToken: String)= viewModelScope.launch {
+//        TODO("Not yet implemented")
+        Log.e("TAG", "onReceivedVerifyTokenSuccess: $verifyToken", )
+        authRepo.getFCMToken(verifyToken)
+    }
+
+    override fun onReceivedFCMSuccess(loginReqDTO: LoginReqDTO): Job {
+        TODO("Not yet implemented")
+    }
+
+    override fun onFailure(e: Throwable) {
+//        TODO("Not yet implemented")
     }
 }

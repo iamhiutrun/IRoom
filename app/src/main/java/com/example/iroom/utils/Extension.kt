@@ -1,6 +1,10 @@
 package com.example.iroom.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.net.wifi.WifiManager
+import android.os.Build
+import com.example.iroom.IRoomApplication
 import java.io.IOException
 import java.lang.RuntimeException
 import java.math.BigInteger
@@ -38,5 +42,19 @@ class Extension {
             }
             return jsonString
         }
+
+        @JvmStatic
+        fun getDeviceName(): String {
+            return Const.ANDROID + Build.MODEL
+        }
+
+        @SuppressLint("HardwareIds", "MissingPermission")
+        fun getMacAddress(application: IRoomApplication): String {
+            val manager = application.getSystemService(Context.WIFI_SERVICE) as WifiManager
+            val info = manager.connectionInfo
+            return info.macAddress.toString()
+        }
+
+
     }
 }

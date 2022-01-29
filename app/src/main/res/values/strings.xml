@@ -59,4 +59,15 @@
     <string name="reload">Reload</string>
     <string name="other_fee_tax_clean">Other fee (tax + clean)</string>
     <string name="create">Create</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="address">Address</string>
+    <string name="gender">Gender</string>
+    <string name="birthday">Birthday</string>
+
+    <string-array name="gender_menu">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

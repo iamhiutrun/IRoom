@@ -63,9 +63,9 @@ class SignupFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         authActivity = (activity as AuthActivity)
-//        binding.btnNext.setOnClickListener {
-//            authenActivity.replaceFragment(RegisterFragment.newInstance(), false)
-//        }
+        binding.btnNext.setOnClickListener {
+            authActivity.replaceFragment(RegisterFragment.newInstance(), false)
+        }
 
         binding.btnVerify.setOnClickListener {
             viewModel.sendOtpToEmail(binding.edtPhoneNumber.text.toString(),requireActivity())
