@@ -55,16 +55,13 @@ android {
     applicationVariants.all { variant ->
         switch (variant.getName()) {
             case "debug":
-                variant.buildConfigField "String", "API_URL", '"http://api.vn/"'
-                variant.buildConfigField "String", "API_POS_URL", '"http://api.vn/"'
+                variant.buildConfigField "String", "API_URL", '"http://3.23.128.88:8080/"'
                 break
             case "release":
-                variant.buildConfigField "String", "API_URL", '"http://api.vn/"'
-                variant.buildConfigField "String", "API_POS_URL", '"http://api.vn/"'
+                variant.buildConfigField "String", "API_URL", '"http://3.23.128.88:8080/"'
                 break
             case "staging":
-                variant.buildConfigField "String", "API_URL", '"http://api.vn/"'
-                variant.buildConfigField "String", "API_POS_URL", '"http://api.vn/"'
+                variant.buildConfigField "String", "API_URL", '"http://3.23.128.88:8080/"'
                 break
         }
     }

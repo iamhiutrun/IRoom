@@ -55,6 +55,11 @@ class Extension {
             return info.macAddress.toString()
         }
 
+        fun validateEmail(email: String): Boolean {
+            val regex = Regex(Const.EMAIL_PATTERN)
+            return email.matches(regex)
+        }
+
 
     }
 }

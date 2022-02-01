@@ -6,9 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.iroom.databinding.FragmentLoginBinding
+import com.example.iroom.utils.Resource
+import com.example.iroom.view.customer.dialog.LoadingDialog
+import com.example.iroom.view.customer.dialog.MessageDialog
 import com.example.iroom.viewmodel.authen.LoginViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
@@ -22,6 +26,9 @@ class LoginFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     lateinit var authActivity: AuthActivity
+
+    private lateinit var loadingDialog: LoadingDialog
+    private lateinit var messageDialog: MessageDialog
 
     private val viewModel: LoginViewModel by viewModels {
         viewModelFactory
@@ -40,17 +47,42 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         authActivity = (activity as AuthActivity)
         binding.btnSignup.setOnClickListener {
-            authActivity.replaceFragment(SignupFragment.newInstance(),false)
+            authActivity.replaceFragment(SignupFragment.newInstance(), false)
         }
 
         binding.btnLogin.setOnClickListener {
-            authActivity.navigateToHome()
+            viewModel.login(
+                binding.edtEmail.text.toString().trim(),
+                binding.edtPassword.text.toString().trim()
+            )
         }
+        loadingDialog = LoadingDialog.newInstance()
+
+        viewModel.userInfo.observe(this, {
+            when (it) {
+                is Resource.Loading -> {
+                    loadingDialog.show(parentFragmentManager, "")
+                }
+                is Resource.Success -> {
+                    loadingDialog.dismiss()
+                    authActivity.navigateToHome()
+                }
+                is Resource.Error -> {
+                    if (it.message.toString() == "Email is invalid") {
+                        binding.edtEmail.error = it.message.toString()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }else{
+                        MessageDialog.newInstance(it.message.toString()).show(parentFragmentManager,"")
+                    }
+                }
+            }
+        })
     }
+
     companion object {
         @JvmStatic
         fun newInstance() =

@@ -38,6 +38,7 @@
     <dimen name="width1">1dp</dimen>
     <dimen name="padding20">20dp</dimen>
     <dimen name="padding30">30dp</dimen>
+    <dimen name="padding70">70dp</dimen>
     <dimen name="width20">20dp</dimen>
     <dimen name="height20">20dp</dimen>
     <dimen name="margin17">17dp</dimen>
@@ -62,4 +63,5 @@
     <dimen name="margin8">8dp</dimen>
     <dimen name="margin_70">70dp</dimen>
     <dimen name="margin43">43dp</dimen>
+    <dimen name="width_250">250dp</dimen>
 </resources>
