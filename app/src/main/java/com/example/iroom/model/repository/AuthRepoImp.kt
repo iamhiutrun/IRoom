@@ -75,6 +75,7 @@ class AuthRepoImp @Inject constructor(
                     storedVerificationId = verificationId
                     resendToken = token
                     Log.d("TAG", "onCodeSent: ")
+                    firebaseListener.onCodeSent()
                 }
             })
         if (resendToken != null) {
@@ -93,10 +94,12 @@ class AuthRepoImp @Inject constructor(
                         Log.e("TAG", "verifyPhoneNumberWithCode: $token")
                     }
                     Log.d("TAG", "verifyPhoneNumberWithCode: Success")
+                    firebaseListener.onVerifySuccess()
                 }
             } else {
                 Log.d("TAG", "verifyPhoneNumberWithCode: Failed")
                 authResult.exception?.let { error ->
+                    Log.d("TAG", "verifyPhoneNumberWithCode: $error")
                     firebaseListener.onFailure(error)
                 }
             }
@@ -148,4 +151,6 @@ interface FirebaseListener {
     fun onReceivedVerifyTokenSuccess(verifyToken: String): Job
     fun onReceivedFCMSuccess(loginReqDTO: LoginReqDTO): Job
     fun onFailure(e: Throwable)
+    fun onCodeSent()
+    fun onVerifySuccess()
 }

@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.net.wifi.WifiManager
 import android.os.Build
+import android.widget.Toast
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import com.example.iroom.IRoomApplication
 import java.io.IOException
 import java.lang.RuntimeException
@@ -58,6 +61,14 @@ class Extension {
         fun validateEmail(email: String): Boolean {
             val regex = Regex(Const.EMAIL_PATTERN)
             return email.matches(regex)
+        }
+
+        fun <T> LiveData<Event<T>>.eventObserve(owner: LifecycleOwner, observer: (t: T) -> Unit) {
+            this.observe(owner) { it?.getContentIfNotHandled()?.let(observer) }
+        }
+
+        fun Any.toast(context: Context): Toast {
+            return Toast.makeText(context, this.toString(), Toast.LENGTH_SHORT).apply { show() }
         }
 
 

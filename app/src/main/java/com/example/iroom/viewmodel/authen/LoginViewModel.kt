@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.iroom.IRoomApplication
 import com.example.iroom.model.entity.User
+import com.example.iroom.model.entity.register.UserRole
 import com.example.iroom.model.repository.AuthRepo
 import com.example.iroom.utils.Const
+import com.example.iroom.utils.Event
 import com.example.iroom.utils.Extension.Companion.validateEmail
 import com.example.iroom.utils.Resource
 import com.example.iroom.viewmodel.common.BaseViewModel
@@ -21,6 +23,12 @@ class LoginViewModel @Inject constructor(
 ) : BaseViewModel() {
     private val _userInfo: MutableLiveData<Resource<User>> = MutableLiveData()
     val userInfo: LiveData<Resource<User>> = _userInfo
+
+    /* true -> host
+       false -> user
+     */
+    private val _userRole : MutableLiveData<Boolean> = MutableLiveData(false)
+    val userRole : LiveData<Boolean> = _userRole
 
     fun login(email: String, password: String) = viewModelScope.launch {
         _userInfo.postValue(Resource.Loading())
@@ -43,5 +51,10 @@ class LoginViewModel @Inject constructor(
                 else -> _userInfo.postValue(Resource.Error("Conversion Error"))
             }
         }
+    }
+
+    fun switchRole(){
+        val value = !userRole.value!!
+        _userRole.postValue(value)
     }
 }

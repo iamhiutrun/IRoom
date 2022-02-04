@@ -8,11 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.iroom.databinding.FragmentSignupBinding
+import com.example.iroom.utils.Extension.Companion.eventObserve
 import com.example.iroom.utils.Resource
 import com.example.iroom.view.customer.dialog.LoadingDialog
+import com.example.iroom.view.customer.dialog.MessageDialog
 import com.example.iroom.viewmodel.authen.RegisterViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
@@ -22,7 +23,9 @@ class SignupFragment : Fragment() {
 
     private lateinit var _binding: FragmentSignupBinding
     private val binding get() = _binding
-    lateinit var authActivity: AuthActivity
+    val authActivity: AuthActivity by lazy {
+        activity as AuthActivity
+    }
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -31,12 +34,12 @@ class SignupFragment : Fragment() {
         viewModelFactory
     }
 
-    private val loadingDialog: LoadingDialog = LoadingDialog.newInstance()
+    private val loadingDialog: LoadingDialog by lazy { LoadingDialog.newInstance() }
 
-    private var countDownTimer: CountDownTimer =  object : CountDownTimer(300000, 1000) {
+    private var countDownTimer: CountDownTimer = object : CountDownTimer(300000, 1000) {
 
         override fun onTick(millisUntilFinished: Long) {
-            var minutes = (millisUntilFinished / 1000)  / 60
+            var minutes = (millisUntilFinished / 1000) / 60
             var seconds = ((millisUntilFinished / 1000) % 60)
             binding.tvCountDownTime.text = "$minutes : $seconds"
         }
@@ -61,36 +64,49 @@ class SignupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setOnClick()
+        observeData()
+    }
 
-        authActivity = (activity as AuthActivity)
+    private fun setOnClick() {
         binding.btnNext.setOnClickListener {
-            authActivity.replaceFragment(RegisterFragment.newInstance(), false)
+            viewModel.verifyPhoneNumberWithCode(binding.edtOtp.text.toString())
         }
 
         binding.btnVerify.setOnClickListener {
-            viewModel.sendOtpToEmail(binding.edtPhoneNumber.text.toString(),requireActivity())
-
+            viewModel.sendOtpToPhoneNumber(
+                binding.edtPhoneNumber.text.toString(),
+                requireActivity()
+            )
         }
 
         binding.btnNext.setOnClickListener {
             viewModel.verifyPhoneNumberWithCode(binding.edtOtp.text.toString())
         }
+    }
 
-        viewModel.senOtp.observe(this@SignupFragment, Observer {
+    private fun observeData() {
+        viewModel.firebaseAuth.eventObserve(viewLifecycleOwner) {
             when (it) {
                 is Resource.Loading -> {
-                    loadingDialog.show(parentFragmentManager,"")
+                    loadingDialog.show(parentFragmentManager, "")
                 }
                 is Resource.Error -> {
                     loadingDialog.dismiss()
+                    MessageDialog.newInstance(it.message.toString()).show(parentFragmentManager, "")
                 }
                 is Resource.Success -> {
-//                    loadingDialog.dismiss()
-                    binding.layoutInputOtp.visibility = View.VISIBLE
-                    countDownTimer.start()
+                    loadingDialog.dismiss()
+                    if (it.data == 1) {
+                        binding.layoutInputOtp.visibility = View.VISIBLE
+                        countDownTimer.start()
+                    } else {
+                        authActivity.replaceFragment(RegisterFragment.newInstance(), true)
+                    }
+
                 }
             }
-        })
+        }
     }
 
     companion object {
